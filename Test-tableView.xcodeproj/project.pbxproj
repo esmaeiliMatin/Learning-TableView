@@ -7,23 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		942923F32B0E314B000D421A /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942923F22B0E314A000D421A /* Order.swift */; };
 		942F51E82B021407004CDC58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51E72B021407004CDC58 /* AppDelegate.swift */; };
-		942F51EA2B021407004CDC58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51E92B021407004CDC58 /* SceneDelegate.swift */; };
-		942F51EC2B021407004CDC58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51EB2B021407004CDC58 /* ViewController.swift */; };
-		942F51EF2B021407004CDC58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 942F51ED2B021407004CDC58 /* Main.storyboard */; };
 		942F51F12B021408004CDC58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 942F51F02B021408004CDC58 /* Assets.xcassets */; };
-		942F51F42B021408004CDC58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 942F51F22B021408004CDC58 /* LaunchScreen.storyboard */; };
+		942F52002B025359004CDC58 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51FF2B025359004CDC58 /* MainTabBar.swift */; };
+		943F0D502B149DA700A5629D /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943F0D4F2B149DA700A5629D /* DeleteButton.swift */; };
+		943F0D532B16076D00A5629D /* IconNamesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943F0D522B16076D00A5629D /* IconNamesEnum.swift */; };
+		9440A5252B1371CA00760D14 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9440A5242B1371CA00760D14 /* SettingsView.swift */; };
+		9440A5272B13728200760D14 /* ScrollViewRowWith1Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9440A5262B13728200760D14 /* ScrollViewRowWith1Labels.swift */; };
+		9440A5292B1372CB00760D14 /* ScrollViewRowWith2Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9440A5282B1372CB00760D14 /* ScrollViewRowWith2Labels.swift */; };
+		9440A52B2B13735600760D14 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9440A52A2B13735600760D14 /* UIView+Layout.swift */; };
+		945344602B03980200C1C9F4 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453445F2B03980200C1C9F4 /* OrderCell.swift */; };
+		945344622B0399EE00C1C9F4 /* orderListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945344612B0399EE00C1C9F4 /* orderListController.swift */; };
+		949DC5322B09E9A0000D6E91 /* OrderHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949DC5312B09E9A0000D6E91 /* OrderHeaderView.swift */; };
+		94BA6C192B04A393005B53BB /* PurchasesStatusEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BA6C182B04A393005B53BB /* PurchasesStatusEnum.swift */; };
+		94BA6C1B2B04CE3E005B53BB /* CustomIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BA6C1A2B04CE3E005B53BB /* CustomIcon.swift */; };
+		94BA6C1D2B06312A005B53BB /* PurchasesInfoLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BA6C1C2B06312A005B53BB /* PurchasesInfoLabels.swift */; };
+		94CD2B782B0B6CBA002433B4 /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CD2B772B0B6CBA002433B4 /* CustomImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		942923F22B0E314A000D421A /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		942F51E42B021407004CDC58 /* Test-tableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test-tableView.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		942F51E72B021407004CDC58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		942F51E92B021407004CDC58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		942F51EB2B021407004CDC58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		942F51EE2B021407004CDC58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		942F51F02B021408004CDC58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		942F51F32B021408004CDC58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		942F51F52B021408004CDC58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		942F51FF2B025359004CDC58 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		943F0D4F2B149DA700A5629D /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
+		943F0D512B14C12A00A5629D /* TODOS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODOS.md; sourceTree = "<group>"; };
+		943F0D522B16076D00A5629D /* IconNamesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconNamesEnum.swift; sourceTree = "<group>"; };
+		9440A5242B1371CA00760D14 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		9440A5262B13728200760D14 /* ScrollViewRowWith1Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewRowWith1Labels.swift; sourceTree = "<group>"; };
+		9440A5282B1372CB00760D14 /* ScrollViewRowWith2Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewRowWith2Labels.swift; sourceTree = "<group>"; };
+		9440A52A2B13735600760D14 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		9453445F2B03980200C1C9F4 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		945344612B0399EE00C1C9F4 /* orderListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderListController.swift; sourceTree = "<group>"; };
+		949DC5312B09E9A0000D6E91 /* OrderHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHeaderView.swift; sourceTree = "<group>"; };
+		94BA6C182B04A393005B53BB /* PurchasesStatusEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesStatusEnum.swift; sourceTree = "<group>"; };
+		94BA6C1A2B04CE3E005B53BB /* CustomIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIcon.swift; sourceTree = "<group>"; };
+		94BA6C1C2B06312A005B53BB /* PurchasesInfoLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesInfoLabels.swift; sourceTree = "<group>"; };
+		94CD2B772B0B6CBA002433B4 /* CustomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +63,7 @@
 		942F51DB2B021407004CDC58 = {
 			isa = PBXGroup;
 			children = (
+				943F0D512B14C12A00A5629D /* TODOS.md */,
 				942F51E62B021407004CDC58 /* Test-tableView */,
 				942F51E52B021407004CDC58 /* Products */,
 			);
@@ -56,15 +80,58 @@
 		942F51E62B021407004CDC58 /* Test-tableView */ = {
 			isa = PBXGroup;
 			children = (
-				942F51E72B021407004CDC58 /* AppDelegate.swift */,
-				942F51E92B021407004CDC58 /* SceneDelegate.swift */,
-				942F51EB2B021407004CDC58 /* ViewController.swift */,
-				942F51ED2B021407004CDC58 /* Main.storyboard */,
-				942F51F02B021408004CDC58 /* Assets.xcassets */,
-				942F51F22B021408004CDC58 /* LaunchScreen.storyboard */,
 				942F51F52B021408004CDC58 /* Info.plist */,
+				942F51FF2B025359004CDC58 /* MainTabBar.swift */,
+				942923F22B0E314A000D421A /* Order.swift */,
+				94BA6C182B04A393005B53BB /* PurchasesStatusEnum.swift */,
+				945344612B0399EE00C1C9F4 /* orderListController.swift */,
+				9440A52C2B13754A00760D14 /* UIComponents */,
+				9440A5232B1371A400760D14 /* ScrollView */,
+				942F51FB2B021589004CDC58 /* supporting */,
 			);
 			path = "Test-tableView";
+			sourceTree = "<group>";
+		};
+		942F51FB2B021589004CDC58 /* supporting */ = {
+			isa = PBXGroup;
+			children = (
+				942F51E72B021407004CDC58 /* AppDelegate.swift */,
+				9440A52A2B13735600760D14 /* UIView+Layout.swift */,
+				942F51F02B021408004CDC58 /* Assets.xcassets */,
+			);
+			path = supporting;
+			sourceTree = "<group>";
+		};
+		9440A5232B1371A400760D14 /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				9440A52D2B1375A600760D14 /* UIComponents */,
+				9440A5242B1371CA00760D14 /* SettingsView.swift */,
+			);
+			path = ScrollView;
+			sourceTree = "<group>";
+		};
+		9440A52C2B13754A00760D14 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				94BA6C1A2B04CE3E005B53BB /* CustomIcon.swift */,
+				94BA6C1C2B06312A005B53BB /* PurchasesInfoLabels.swift */,
+				9453445F2B03980200C1C9F4 /* OrderCell.swift */,
+				94CD2B772B0B6CBA002433B4 /* CustomImage.swift */,
+				949DC5312B09E9A0000D6E91 /* OrderHeaderView.swift */,
+				943F0D522B16076D00A5629D /* IconNamesEnum.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		9440A52D2B1375A600760D14 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				9440A5282B1372CB00760D14 /* ScrollViewRowWith2Labels.swift */,
+				9440A5262B13728200760D14 /* ScrollViewRowWith1Labels.swift */,
+				943F0D4F2B149DA700A5629D /* DeleteButton.swift */,
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				942F51F42B021408004CDC58 /* LaunchScreen.storyboard in Resources */,
 				942F51F12B021408004CDC58 /* Assets.xcassets in Resources */,
-				942F51EF2B021407004CDC58 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,32 +203,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				942F51EC2B021407004CDC58 /* ViewController.swift in Sources */,
+				943F0D532B16076D00A5629D /* IconNamesEnum.swift in Sources */,
+				94BA6C192B04A393005B53BB /* PurchasesStatusEnum.swift in Sources */,
+				949DC5322B09E9A0000D6E91 /* OrderHeaderView.swift in Sources */,
+				942923F32B0E314B000D421A /* Order.swift in Sources */,
+				94BA6C1B2B04CE3E005B53BB /* CustomIcon.swift in Sources */,
+				9440A5292B1372CB00760D14 /* ScrollViewRowWith2Labels.swift in Sources */,
+				945344602B03980200C1C9F4 /* OrderCell.swift in Sources */,
+				942F52002B025359004CDC58 /* MainTabBar.swift in Sources */,
 				942F51E82B021407004CDC58 /* AppDelegate.swift in Sources */,
-				942F51EA2B021407004CDC58 /* SceneDelegate.swift in Sources */,
+				94CD2B782B0B6CBA002433B4 /* CustomImage.swift in Sources */,
+				94BA6C1D2B06312A005B53BB /* PurchasesInfoLabels.swift in Sources */,
+				9440A5272B13728200760D14 /* ScrollViewRowWith1Labels.swift in Sources */,
+				9440A5252B1371CA00760D14 /* SettingsView.swift in Sources */,
+				9440A52B2B13735600760D14 /* UIView+Layout.swift in Sources */,
+				945344622B0399EE00C1C9F4 /* orderListController.swift in Sources */,
+				943F0D502B149DA700A5629D /* DeleteButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		942F51ED2B021407004CDC58 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				942F51EE2B021407004CDC58 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		942F51F22B021408004CDC58 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				942F51F32B021408004CDC58 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		942F51F62B021408004CDC58 /* Debug */ = {
@@ -291,7 +350,6 @@
 				INFOPLIST_FILE = "Test-tableView/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -318,7 +376,6 @@
 				INFOPLIST_FILE = "Test-tableView/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
