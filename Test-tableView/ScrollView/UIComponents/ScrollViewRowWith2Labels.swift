@@ -41,8 +41,16 @@ class ScrollViewRowWith2Labels: UIView {
         commonInit()
     }
     
+    init(frame: CGRect, model: ScrollViewRowWith2LabelsModel) {
+        super.init(frame: frame)
+        commonInit()
+        newConfigure(model: model)
+    }
+    
     private func commonInit() {
         backgroundColor = .white
+        label2.textColor = .gray
+        icon.tintColor = .systemGray
         
         addSubview(icon)
         addSubview(label)
@@ -60,11 +68,9 @@ class ScrollViewRowWith2Labels: UIView {
     
     // MARK: - Configuration
     
-    func configure(with title: String, and title2: String, color: UIColor, iconName: String) {
-        label.text = title
-        label2.text = title2
-        label2.textColor = color
-        icon.image = UIImage(systemName: iconName)
-        icon.tintColor = .systemGray
+    func newConfigure(model: ScrollViewRowWith2LabelsModel) {
+        label.text = model.title
+        label2.text = model.title2
+        icon.image = UIImage(systemName: model.iconName)
     }
 }

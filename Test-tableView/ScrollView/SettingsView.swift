@@ -9,6 +9,17 @@ import UIKit
 
 class SettingsView: UIViewController {
     
+    // MARK: - Models
+    let languageModel = ScrollViewRowWith2LabelsModel(title: "Language", title2: "English", iconName: "globe")
+    let currentVersionModel = ScrollViewRowWith2LabelsModel(title: "Current Version", title2: "1.1.2", iconName: "magnifyingglass")
+    let notificationsModel = ScrollViewRowWith1LabelsModel(title: "Notifications", iconName: "heart", hasForwardArrow: false)
+    let faqModel = ScrollViewRowWith1LabelsModel(title: "FAQ", iconName: "magnifyingglass", hasForwardArrow: true)
+    let aboutUsModel = ScrollViewRowWith1LabelsModel(title: "About us", iconName: "questionmark.circle", hasForwardArrow: true)
+    let privacyPolicyModel = ScrollViewRowWith1LabelsModel(title: "Privacy Policy", iconName: "checkmark.shield", hasForwardArrow: true)
+    let termsAndConditionsModel = ScrollViewRowWith1LabelsModel(title: "Terms and Conditions", iconName: "newspaper", hasForwardArrow: true)
+    let deleteAcountModel = ScrollViewRowWith1LabelsModel(title: "Delete Account", iconName: "person.crop.circle.badge.xmark", hasForwardArrow: true)
+    
+    // MARK: - prareties
     private lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
         view.contentInset = .init(top: 10, left: 0, bottom: 0, right: 0)
@@ -23,16 +34,25 @@ class SettingsView: UIViewController {
         return view
     }()
     
-    lazy var language = ScrollViewRowWith2Labels()
-    lazy var notifications = ScrollViewRowWith1Labels()
-    lazy var currentVersion = ScrollViewRowWith2Labels()
-    lazy var faq = ScrollViewRowWith1Labels()
-    lazy var aboutUs = ScrollViewRowWith1Labels()
-    lazy var privacyPolicy = ScrollViewRowWith1Labels()
-    lazy var termsAndConditions = ScrollViewRowWith1Labels()
-    lazy var deleteAccount = ScrollViewRowWith1Labels()
+    private lazy var deleteButtonContainer: UIStackView = {
+       let view = UIStackView()
+        view.axis = .horizontal
+        view.distribution = .equalCentering
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    lazy var language = ScrollViewRowWith2Labels(frame: .zero, model: languageModel)
+    lazy var notifications = ScrollViewRowWith1Labels(frame: .zero, model: notificationsModel)
+    lazy var currentVersion = ScrollViewRowWith2Labels(frame: .zero, model: currentVersionModel)
+    lazy var faq = ScrollViewRowWith1Labels(frame: .zero, model: faqModel)
+    lazy var aboutUs = ScrollViewRowWith1Labels(frame: .zero, model: aboutUsModel)
+    lazy var privacyPolicy = ScrollViewRowWith1Labels(frame: .zero, model: privacyPolicyModel)
+    lazy var termsAndConditions = ScrollViewRowWith1Labels(frame: .zero, model: termsAndConditionsModel)
+    lazy var deleteAccount = ScrollViewRowWith1Labels(frame: .zero, model: deleteAcountModel)
     lazy var logout = UIView()
     lazy var deleteButton = DeleteButton(title: "Log out")
+    lazy var switchButton = UISwitch()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +61,6 @@ class SettingsView: UIViewController {
         
         view.addSubview(scrollView)
         scrollView.alignAllEdgesWithSuperview(side: .allSides)
-        
         scrollView.addSubview(stack)
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.alignAllEdgesWithSuperview(side: .allSides, .init(top: 50, left: 0, bottom: 0, right: 0))
@@ -60,34 +79,25 @@ class SettingsView: UIViewController {
     }
 }
 
+
+
 extension SettingsView {
     
     func createViews(stack: UIStackView) {
         
-        let viewHeight = 82.0
+//        let viewHeight = 82.0
         
-        language.configure(with: "Language", and: "English", color: #colorLiteral(red: 0.6392156863, green: 0.7450980392, blue: 0.431372549, alpha: 1), iconName: "globe")
-        
-        notifications.setSize(height: viewHeight)
-        notifications.configure(with: "Notifications", iconName: "heart", hasForwardArrow: false)
-        lazy var switchButton: UISwitch = {
-            let view = UISwitch()
-            view.translatesAutoresizingMaskIntoConstraints = false
-            view.onTintColor = UIColor(red: 157/255, green: 191/255, blue: 67/255, alpha: 1)
-            return view
-        }()
+        switchButton.translatesAutoresizingMaskIntoConstraints = false
+        switchButton.onTintColor = UIColor(red: 157/255, green: 191/255, blue: 67/255, alpha: 1)
         notifications.addSubview(switchButton)
-        switchButton.alignAllEdgesWithSuperview(side: .allSides, .init(top: 0, left: 0, bottom: 0, right: 0))
-        currentVersion.configure(with: "Current Version", and: "1.1.2", color: .systemGray, iconName: "magnifyingglass")
-        faq.configure(with: "FAQ", iconName: "magnifyingglass", hasForwardArrow: true)
-        aboutUs.configure(with: "About us", iconName: "questionmark.circle", hasForwardArrow: true)
-        privacyPolicy.configure(with: "Privacy Policy", iconName: "checkmark.shield", hasForwardArrow: true)
-        termsAndConditions.configure(with: "Terms and Conditions", iconName: "newspaper", hasForwardArrow: true)
-        deleteAccount.configure(with: "Delete Account", iconName: "person.crop.circle.badge.xmark", hasForwardArrow: true)
+        switchButton.alignAllEdgesWithSuperview(side: .allSides, .init(top: 26, left: 350, bottom: 0, right: 0))
         
         logout.setSize(height: 112)
-        let buttonIcon = UIImage(systemName: "door.right.hand.open")
-        deleteButton.setImage(buttonIcon, for: .normal)
+        let deleteButtonIcon = UIImage(systemName: "door.right.hand.open")
+        deleteButton.setImage(deleteButtonIcon, for: .normal)
+        deleteButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -8)
+        deleteButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 8)
+//        deleteButton.isUserInteractionEnabled = true
         logout.addSubview(deleteButton)
         deleteButton.setSize(width: 360, height: 66)
         deleteButton.setCenterAnchorToCenterOfSuperview(axis: .vertical)

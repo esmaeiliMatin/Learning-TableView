@@ -25,6 +25,12 @@ class ScrollViewRowWith1Labels: UIView {
         commonInit()
     }
     
+    init(frame: CGRect, model: ScrollViewRowWith1LabelsModel) {
+        super.init(frame: frame)
+        commonInit()
+        newConfigure(model: model)
+    }
+    
     private func commonInit() {
         backgroundColor = .white
         
@@ -51,6 +57,22 @@ class ScrollViewRowWith1Labels: UIView {
         icon.tintColor = .systemGray
         
         if hasForwardArrow {
+            let icon2 = UIImageView(image: UIImage(systemName: "chevron.forward"))
+            icon2.tintColor = .systemGray
+            icon2.translatesAutoresizingMaskIntoConstraints = false
+            addSubview(icon2)
+            icon2.setSize(width: 8, height: 16)
+            icon2.alignAllEdgesWithSuperview(side: .trailing, .init(top: 0, left: 0, bottom: 0, right: -30))
+            icon2.alignAllEdgesWithSuperview(side: .top, .init(top: 29, left: 0, bottom: 0, right: 0))
+        }
+    }
+    
+    func newConfigure(model: ScrollViewRowWith1LabelsModel) {
+        label.text = model.title
+        icon.image = UIImage(systemName: model.iconName)
+        icon.tintColor = .systemGray
+        
+        if model.hasForwardArrow {
             let icon2 = UIImageView(image: UIImage(systemName: "chevron.forward"))
             icon2.tintColor = .systemGray
             icon2.translatesAutoresizingMaskIntoConstraints = false
