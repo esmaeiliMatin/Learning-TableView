@@ -1,12 +1,11 @@
 import UIKit
 
-class ScrollViewRowWith1Labels: UIView {
+class IconLabelChevronRow: UIView {
     // MARK: - Properties
     
     private let label: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -25,57 +24,37 @@ class ScrollViewRowWith1Labels: UIView {
         commonInit()
     }
     
-    init(frame: CGRect, model: ScrollViewRowWith1LabelsModel) {
+    init(frame: CGRect, model: IconLabelChevronRowModel) {
         super.init(frame: frame)
         commonInit()
-        newConfigure(model: model)
+        configure(model: model)
     }
     
     private func commonInit() {
         backgroundColor = .white
-        
-        addSubview(label)
-        addSubview(icon)
-        
-        icon.translatesAutoresizingMaskIntoConstraints = false
         setSize(height: viewHeight)
-        
+                
+        addSubview(label)
+        label.setSize(width: 200)
         label.alignAllEdgesWithSuperview(side: .topAndBottom, .init(top: 0, left: 0, bottom: 0, right: 0))
         label.alignAllEdgesWithSuperview(side: .leading, .init(top: 0, left: 80, bottom: 0, right: 0))
-        label.setSize(width: 200)
+        
+        addSubview(icon)
         icon.setSize(width: 24, height: 24)
         icon.alignAllEdgesWithSuperview(side: .leading, .init(top: 0, left: 30, bottom: 0, right: 0))
         icon.alignAllEdgesWithSuperview(side: .top, .init(top: 29, left: 0, bottom: 0, right: 0))
-        
     }
     
     // MARK: - Configuration
     
-    func configure(with title: String, iconName: String, hasForwardArrow: Bool) {
-        label.text = title
-        icon.image = UIImage(systemName: iconName)
-        icon.tintColor = .systemGray
-        
-        if hasForwardArrow {
-            let icon2 = UIImageView(image: UIImage(systemName: "chevron.forward"))
-            icon2.tintColor = .systemGray
-            icon2.translatesAutoresizingMaskIntoConstraints = false
-            addSubview(icon2)
-            icon2.setSize(width: 8, height: 16)
-            icon2.alignAllEdgesWithSuperview(side: .trailing, .init(top: 0, left: 0, bottom: 0, right: -30))
-            icon2.alignAllEdgesWithSuperview(side: .top, .init(top: 29, left: 0, bottom: 0, right: 0))
-        }
-    }
-    
-    func newConfigure(model: ScrollViewRowWith1LabelsModel) {
+    func configure(model: IconLabelChevronRowModel) {
         label.text = model.title
-        icon.image = UIImage(systemName: model.iconName)
+        icon.image = UIImage(systemName: model.IconName)
         icon.tintColor = .systemGray
         
         if model.hasForwardArrow {
             let icon2 = UIImageView(image: UIImage(systemName: "chevron.forward"))
             icon2.tintColor = .systemGray
-            icon2.translatesAutoresizingMaskIntoConstraints = false
             addSubview(icon2)
             icon2.setSize(width: 8, height: 16)
             icon2.alignAllEdgesWithSuperview(side: .trailing, .init(top: 0, left: 0, bottom: 0, right: -30))

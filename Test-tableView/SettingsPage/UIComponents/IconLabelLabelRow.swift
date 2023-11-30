@@ -1,5 +1,5 @@
 //
-//  SettingsViewWith2Lable.swift
+//  IconLabelLabelRow.swift
 //  Test-ScrollView
 //
 //  Created by Matin on 2023-11-12.
@@ -7,14 +7,13 @@
 
 import UIKit
 
-class ScrollViewRowWith2Labels: UIView {
+class IconLabelLabelRow: UIView {
     
     // MARK: - Properties
     
     private let label: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -22,7 +21,6 @@ class ScrollViewRowWith2Labels: UIView {
         let label = UILabel()
         label.textAlignment = .right
         label.textColor = .systemGray
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -41,10 +39,10 @@ class ScrollViewRowWith2Labels: UIView {
         commonInit()
     }
     
-    init(frame: CGRect, model: ScrollViewRowWith2LabelsModel) {
+    init(frame: CGRect, model: IconLabelLabelRowModel) {
         super.init(frame: frame)
         commonInit()
-        newConfigure(model: model)
+        configure(model: model)
     }
     
     private func commonInit() {
@@ -56,8 +54,6 @@ class ScrollViewRowWith2Labels: UIView {
         addSubview(label)
         addSubview(label2)
         
-        icon.translatesAutoresizingMaskIntoConstraints = false
-        
         setSize(height: viewHeight)
         label.alignAllEdgesWithSuperview(side: .allSides, .init(top: 0, left: 80, bottom: 0, right: 0))
         label2.alignAllEdgesWithSuperview(side: .allSides, .init(top: 0, left: 0, bottom: 0, right: -30))
@@ -68,8 +64,8 @@ class ScrollViewRowWith2Labels: UIView {
     
     // MARK: - Configuration
     
-    func newConfigure(model: ScrollViewRowWith2LabelsModel) {
-        label.text = model.title
+    func configure(model: IconLabelLabelRowModel) {
+        label.text = model.title1
         label2.text = model.title2
         icon.image = UIImage(systemName: model.iconName)
     }

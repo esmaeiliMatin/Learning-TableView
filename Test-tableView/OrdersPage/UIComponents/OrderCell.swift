@@ -1,5 +1,5 @@
 //
-//  TableViewCell.swift
+//  OrderCell.swift
 //  Test-tableView
 //
 //  Created by Matin on 2023-11-14.
@@ -9,20 +9,18 @@ import UIKit
 
 class OrderCell: UITableViewCell {
     
-    var view: UIView = {
+    lazy var view: UIView = {
         let view = UIView()
         return view
     }()
     
-    var statusLabel: UILabel = {
+    lazy var statusLabel: UILabel = {
         let view = UILabel()
         view.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         return view
     }()
     
-    var statusIcon = customIcon(frame: .zero, test: "matin")
-    
-    var dateLabel: UILabel = {
+    lazy var dateLabel: UILabel = {
         let view = UILabel()
         view.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         view.textColor = .systemGray
@@ -30,89 +28,81 @@ class OrderCell: UITableViewCell {
         return view
     }()
     
-    var leftInfoLabel: PurchasesInfoLabels = {
+    lazy var leftInfoLabel: PurchasesInfoLabels = {
         let view = PurchasesInfoLabels()
         return view
     }()
     
-    var midInfoLabel: PurchasesInfoLabels = {
+    lazy var midInfoLabel: PurchasesInfoLabels = {
         let view = PurchasesInfoLabels()
         return view
     }()
     
-    var rightInfoLabel: PurchasesInfoLabels = {
+    lazy var rightInfoLabel: PurchasesInfoLabels = {
         let view = PurchasesInfoLabels()
         return view
     }()
     
-    private var allInfoStack: UIStackView = {
+    lazy var statusIcon = PurchasesStatusIcon(frame: .zero)
+    
+    private lazy var allInfoStack: UIStackView = {
         let view = UIStackView()
         view.distribution = .fillEqually
         view.axis = .horizontal
         return view
     }()
     
-    private var imageStack: UIStackView = {
+    private lazy var imageStack: UIStackView = {
         let view = UIStackView()
         view.distribution = .fillEqually
         view.axis = .horizontal
         return view
     }()
     
-    static let AllImages: [CustomImage] = [CustomImage(frame: .zero, imageName: "image-1", count: "4"),
-                                           CustomImage(frame: .zero, imageName: "image-2", count: "1"),
-                                           CustomImage(frame: .zero, imageName: "image-3", count: "2"),
-                                           CustomImage(frame: .zero, imageName: "image-4", count: "7"),
-                                           CustomImage(frame: .zero, imageName: "image-5", count: "2"),
-                                           CustomImage(frame: .zero, imageName: "image-6", count: "9")
+    static let AllImages: [OrderListImage] = [
+        OrderListImage(frame: .zero, imageName: "image-1", count: "4"),
+        OrderListImage(frame: .zero, imageName: "image-2", count: "1"),
+        OrderListImage(frame: .zero, imageName: "image-3", count: "2"),
+        OrderListImage(frame: .zero, imageName: "image-4", count: "7"),
+        OrderListImage(frame: .zero, imageName: "image-5", count: "2"),
+        OrderListImage(frame: .zero, imageName: "image-6", count: "9")
     ]
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         contentView.addSubview(view)
         view.alignAllEdgesWithSuperview(side: .allSides, .init(top: 0, left: 0, bottom: -16, right: 0))
         
-        statusLabel.translatesAutoresizingMaskIntoConstraints = false
         statusLabel.backgroundColor = .white
         view.addSubview(statusLabel)
         statusLabel.setSize(width: 150, height: 40)
         statusLabel.alignAllEdgesWithSuperview(side: .leading, .init(top: 0, left: 70, bottom: 0, right: 0))
         statusLabel.alignAllEdgesWithSuperview(side: .top, .init(top: 40, left: 0, bottom: 0, right: 0))
         
-        
-        statusIcon.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(statusIcon)
-        
         statusIcon.setSize(width: 34, height: 34)
         statusIcon.alignAllEdgesWithSuperview(side: .leading, .init(top: 0, left: 20, bottom: 0, right: 0))
         statusIcon.alignAllEdgesWithSuperview(side: .top, .init(top: 42, left: 0, bottom: 0, right: 0))
-
-        dateLabel.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(dateLabel)
         
+        view.addSubview(dateLabel)
         dateLabel.setSize(width: 120, height: 40)
         dateLabel.alignAllEdgesWithSuperview(side: .trailing, .init(top: 0, left: 0, bottom: 0, right: -24))
         dateLabel.alignAllEdgesWithSuperview(side: .top, .init(top: 40, left: 0, bottom: 0, right: 0))
-        
-        allInfoStack.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(allInfoStack)
-        allInfoStack.alignAllEdgesWithSuperview(side: .allSides, .init(top: 100, left: 20, bottom: -154, right: -20))
-        
+
         allInfoStack.addArrangedSubview(leftInfoLabel)
         allInfoStack.addArrangedSubview(midInfoLabel)
         allInfoStack.addArrangedSubview(rightInfoLabel)
+        view.addSubview(allInfoStack)
+        allInfoStack.alignAllEdgesWithSuperview(side: .allSides, .init(top: 100, left: 20, bottom: -154, right: -20))
         
-        imageStack.translatesAutoresizingMaskIntoConstraints = false
+        imageStack.addArrangedSubview(OrderListImage(frame: .zero, imageName: "image-1", count: "2"))
+        imageStack.addArrangedSubview(OrderListImage(frame: .zero, imageName: "image-2", count: "2"))
+        imageStack.addArrangedSubview(OrderListImage(frame: .zero, imageName: "image-3", count: "2"))
+        imageStack.addArrangedSubview(OrderListImage(frame: .zero, imageName: "image-4", count: "2"))
         view.addSubview(imageStack)
         imageStack.alignAllEdgesWithSuperview(side: .allSides, .init(top: 200, left: 24, bottom: -16, right: -24))
-        
-        imageStack.addArrangedSubview(CustomImage(frame: .zero, imageName: "image-1", count: "2"))
-        imageStack.addArrangedSubview(CustomImage(frame: .zero, imageName: "image-2", count: "2"))
-        imageStack.addArrangedSubview(CustomImage(frame: .zero, imageName: "image-3", count: "2"))
-        imageStack.addArrangedSubview(CustomImage(frame: .zero, imageName: "image-4", count: "2"))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -120,7 +110,9 @@ class OrderCell: UITableViewCell {
     }
     
     func configurate(order: Order) {
-        var imageName: statusIconNames
+        backgroundColor = UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1)
+        
+        let imageName: IconNamesEnum
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM d, yyyy"
         
@@ -132,15 +124,15 @@ class OrderCell: UITableViewCell {
         
         switch order.status {
         case .delivered:
-            imageName = statusIconNames.delivered
+            imageName = IconNamesEnum.delivered
         case .processing:
-            imageName = statusIconNames.processing
+            imageName = IconNamesEnum.processing
         case .cancel:
-            imageName = statusIconNames.cancel
+            imageName = IconNamesEnum.cancel
         case .noInfo:
-            imageName = statusIconNames.noInfo
+            imageName = IconNamesEnum.noInfo
         case .waitForPayment:
-            imageName = statusIconNames.waitForPayment
+            imageName = IconNamesEnum.waitForPayment
         }
         
         statusIcon.setImage(imageName: imageName)

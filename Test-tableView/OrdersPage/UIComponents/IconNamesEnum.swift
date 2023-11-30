@@ -1,5 +1,5 @@
 //
-//  IconNamesEnum.swift
+//  IconNamesEnunm.swift
 //  Test-tableView
 //
 //  Created by Matin on 2023-11-28.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum statusIconNames: String {
+enum IconNamesEnum: String {
     case delivered = "checkmark"
     case waitForPayment = "hourglass"
     case processing = "circle.dashed"

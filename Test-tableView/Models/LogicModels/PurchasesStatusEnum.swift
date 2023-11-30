@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum statusOfPurchases: String {
+enum PurchasesStatusEnum: String {
     case delivered = "Delivered"
     case waitForPayment = "Wait for payment"
     case processing = "Processing"

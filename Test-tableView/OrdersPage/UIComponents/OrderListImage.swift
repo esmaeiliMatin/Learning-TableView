@@ -1,5 +1,5 @@
 //
-//  CustomImage.swift
+//  OrderListImage.swift
 //  Test-tableView
 //
 //  Created by Matin on 2023-11-20.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomImage: UIView {
+class OrderListImage: UIView {
     
     lazy var imageView: UIImageView = {
         let view = UIImageView()

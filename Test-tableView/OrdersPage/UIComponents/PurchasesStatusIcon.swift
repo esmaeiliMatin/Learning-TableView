@@ -1,23 +1,18 @@
 import UIKit
 
-class customIcon: UIView {
+class PurchasesStatusIcon: UIView {
     
     var name: String = ""
     var uiImageView = UIImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        setupView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    init(frame: CGRect, test: String) {
-        super.init(frame: frame)
-        
-        setupView()
-        print(test)
     }
     
     override func draw(_ rect: CGRect) {
@@ -31,15 +26,13 @@ class customIcon: UIView {
     private func setupView() {
         backgroundColor = .white
         uiImageView.backgroundColor = .white
+        
         addSubview(uiImageView)
-        
-        uiImageView.translatesAutoresizingMaskIntoConstraints = false
-        
         uiImageView.setCenterAnchorToCenterOfSuperview(axis: .horizontal)
         uiImageView.setCenterAnchorToCenterOfSuperview(axis: .vertical)
     }
     
-    func setImage(imageName: statusIconNames) {
+    func setImage(imageName: IconNamesEnum) {
         let image = UIImage(systemName: imageName.rawValue)
         uiImageView.image = image ?? UIImage()
     }

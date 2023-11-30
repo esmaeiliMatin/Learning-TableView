@@ -13,19 +13,19 @@
 		942F52002B025359004CDC58 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51FF2B025359004CDC58 /* MainTabBar.swift */; };
 		943F0D502B149DA700A5629D /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943F0D4F2B149DA700A5629D /* DeleteButton.swift */; };
 		943F0D532B16076D00A5629D /* IconNamesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943F0D522B16076D00A5629D /* IconNamesEnum.swift */; };
-		943F0D552B16296500A5629D /* Model-ScrollViewRowWith1Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943F0D542B16296500A5629D /* Model-ScrollViewRowWith1Labels.swift */; };
-		943F0D572B1630DB00A5629D /* ScrollViewRowWith2LabelsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943F0D562B1630DB00A5629D /* ScrollViewRowWith2LabelsModel.swift */; };
-		9440A5252B1371CA00760D14 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9440A5242B1371CA00760D14 /* SettingsView.swift */; };
-		9440A5272B13728200760D14 /* ScrollViewRowWith1Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9440A5262B13728200760D14 /* ScrollViewRowWith1Labels.swift */; };
-		9440A5292B1372CB00760D14 /* ScrollViewRowWith2Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9440A5282B1372CB00760D14 /* ScrollViewRowWith2Labels.swift */; };
+		943F0D552B16296500A5629D /* IconLabelChevronRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943F0D542B16296500A5629D /* IconLabelChevronRowModel.swift */; };
+		943F0D572B1630DB00A5629D /* IconLabelLabelRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943F0D562B1630DB00A5629D /* IconLabelLabelRowModel.swift */; };
+		9440A5252B1371CA00760D14 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9440A5242B1371CA00760D14 /* SettingsVC.swift */; };
+		9440A5272B13728200760D14 /* IconLabelChevronRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9440A5262B13728200760D14 /* IconLabelChevronRow.swift */; };
+		9440A5292B1372CB00760D14 /* IconLabelLabelRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9440A5282B1372CB00760D14 /* IconLabelLabelRow.swift */; };
 		9440A52B2B13735600760D14 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9440A52A2B13735600760D14 /* UIView+Layout.swift */; };
 		945344602B03980200C1C9F4 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453445F2B03980200C1C9F4 /* OrderCell.swift */; };
-		945344622B0399EE00C1C9F4 /* orderListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945344612B0399EE00C1C9F4 /* orderListController.swift */; };
+		945344622B0399EE00C1C9F4 /* OrderListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945344612B0399EE00C1C9F4 /* OrderListVC.swift */; };
 		949DC5322B09E9A0000D6E91 /* OrderHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949DC5312B09E9A0000D6E91 /* OrderHeaderView.swift */; };
 		94BA6C192B04A393005B53BB /* PurchasesStatusEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BA6C182B04A393005B53BB /* PurchasesStatusEnum.swift */; };
-		94BA6C1B2B04CE3E005B53BB /* CustomIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BA6C1A2B04CE3E005B53BB /* CustomIcon.swift */; };
+		94BA6C1B2B04CE3E005B53BB /* PurchasesStatusIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BA6C1A2B04CE3E005B53BB /* PurchasesStatusIcon.swift */; };
 		94BA6C1D2B06312A005B53BB /* PurchasesInfoLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BA6C1C2B06312A005B53BB /* PurchasesInfoLabels.swift */; };
-		94CD2B782B0B6CBA002433B4 /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CD2B772B0B6CBA002433B4 /* CustomImage.swift */; };
+		94CD2B782B0B6CBA002433B4 /* OrderListImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CD2B772B0B6CBA002433B4 /* OrderListImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,19 +38,19 @@
 		943F0D4F2B149DA700A5629D /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
 		943F0D512B14C12A00A5629D /* TODOS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODOS.md; sourceTree = "<group>"; };
 		943F0D522B16076D00A5629D /* IconNamesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconNamesEnum.swift; sourceTree = "<group>"; };
-		943F0D542B16296500A5629D /* Model-ScrollViewRowWith1Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Model-ScrollViewRowWith1Labels.swift"; sourceTree = "<group>"; };
-		943F0D562B1630DB00A5629D /* ScrollViewRowWith2LabelsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewRowWith2LabelsModel.swift; sourceTree = "<group>"; };
-		9440A5242B1371CA00760D14 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		9440A5262B13728200760D14 /* ScrollViewRowWith1Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewRowWith1Labels.swift; sourceTree = "<group>"; };
-		9440A5282B1372CB00760D14 /* ScrollViewRowWith2Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewRowWith2Labels.swift; sourceTree = "<group>"; };
+		943F0D542B16296500A5629D /* IconLabelChevronRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconLabelChevronRowModel.swift; sourceTree = "<group>"; };
+		943F0D562B1630DB00A5629D /* IconLabelLabelRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconLabelLabelRowModel.swift; sourceTree = "<group>"; };
+		9440A5242B1371CA00760D14 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		9440A5262B13728200760D14 /* IconLabelChevronRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconLabelChevronRow.swift; sourceTree = "<group>"; };
+		9440A5282B1372CB00760D14 /* IconLabelLabelRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconLabelLabelRow.swift; sourceTree = "<group>"; };
 		9440A52A2B13735600760D14 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		9453445F2B03980200C1C9F4 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
-		945344612B0399EE00C1C9F4 /* orderListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderListController.swift; sourceTree = "<group>"; };
+		945344612B0399EE00C1C9F4 /* OrderListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListVC.swift; sourceTree = "<group>"; };
 		949DC5312B09E9A0000D6E91 /* OrderHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHeaderView.swift; sourceTree = "<group>"; };
 		94BA6C182B04A393005B53BB /* PurchasesStatusEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesStatusEnum.swift; sourceTree = "<group>"; };
-		94BA6C1A2B04CE3E005B53BB /* CustomIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIcon.swift; sourceTree = "<group>"; };
+		94BA6C1A2B04CE3E005B53BB /* PurchasesStatusIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesStatusIcon.swift; sourceTree = "<group>"; };
 		94BA6C1C2B06312A005B53BB /* PurchasesInfoLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesInfoLabels.swift; sourceTree = "<group>"; };
-		94CD2B772B0B6CBA002433B4 /* CustomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImage.swift; sourceTree = "<group>"; };
+		94CD2B772B0B6CBA002433B4 /* OrderListImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,12 +85,12 @@
 			isa = PBXGroup;
 			children = (
 				942F51F52B021408004CDC58 /* Info.plist */,
+				942F51E72B021407004CDC58 /* AppDelegate.swift */,
 				942F51FF2B025359004CDC58 /* MainTabBar.swift */,
-				942923F22B0E314A000D421A /* Order.swift */,
-				94BA6C182B04A393005B53BB /* PurchasesStatusEnum.swift */,
-				945344612B0399EE00C1C9F4 /* orderListController.swift */,
-				9440A52C2B13754A00760D14 /* UIComponents */,
-				9440A5232B1371A400760D14 /* ScrollView */,
+				9440A52A2B13735600760D14 /* UIView+Layout.swift */,
+				949700062B18700B009F64A9 /* Models */,
+				9497000B2B18909D009F64A9 /* OrdersPage */,
+				9440A5232B1371A400760D14 /* SettingsPage */,
 				942F51FB2B021589004CDC58 /* supporting */,
 			);
 			path = "Test-tableView";
@@ -99,43 +99,75 @@
 		942F51FB2B021589004CDC58 /* supporting */ = {
 			isa = PBXGroup;
 			children = (
-				942F51E72B021407004CDC58 /* AppDelegate.swift */,
-				9440A52A2B13735600760D14 /* UIView+Layout.swift */,
 				942F51F02B021408004CDC58 /* Assets.xcassets */,
 			);
 			path = supporting;
 			sourceTree = "<group>";
 		};
-		9440A5232B1371A400760D14 /* ScrollView */ = {
+		9440A5232B1371A400760D14 /* SettingsPage */ = {
 			isa = PBXGroup;
 			children = (
+				9440A5242B1371CA00760D14 /* SettingsVC.swift */,
 				9440A52D2B1375A600760D14 /* UIComponents */,
-				9440A5242B1371CA00760D14 /* SettingsView.swift */,
-				943F0D542B16296500A5629D /* Model-ScrollViewRowWith1Labels.swift */,
-				943F0D562B1630DB00A5629D /* ScrollViewRowWith2LabelsModel.swift */,
 			);
-			path = ScrollView;
-			sourceTree = "<group>";
-		};
-		9440A52C2B13754A00760D14 /* UIComponents */ = {
-			isa = PBXGroup;
-			children = (
-				94BA6C1A2B04CE3E005B53BB /* CustomIcon.swift */,
-				94BA6C1C2B06312A005B53BB /* PurchasesInfoLabels.swift */,
-				9453445F2B03980200C1C9F4 /* OrderCell.swift */,
-				94CD2B772B0B6CBA002433B4 /* CustomImage.swift */,
-				949DC5312B09E9A0000D6E91 /* OrderHeaderView.swift */,
-				943F0D522B16076D00A5629D /* IconNamesEnum.swift */,
-			);
-			path = UIComponents;
+			path = SettingsPage;
 			sourceTree = "<group>";
 		};
 		9440A52D2B1375A600760D14 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				9440A5282B1372CB00760D14 /* ScrollViewRowWith2Labels.swift */,
-				9440A5262B13728200760D14 /* ScrollViewRowWith1Labels.swift */,
+				9440A5262B13728200760D14 /* IconLabelChevronRow.swift */,
+				9440A5282B1372CB00760D14 /* IconLabelLabelRow.swift */,
 				943F0D4F2B149DA700A5629D /* DeleteButton.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		949700062B18700B009F64A9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				949700082B1870B7009F64A9 /* LogicModels */,
+				949700072B1870AE009F64A9 /* UIModels */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		949700072B1870AE009F64A9 /* UIModels */ = {
+			isa = PBXGroup;
+			children = (
+				943F0D542B16296500A5629D /* IconLabelChevronRowModel.swift */,
+				943F0D562B1630DB00A5629D /* IconLabelLabelRowModel.swift */,
+			);
+			path = UIModels;
+			sourceTree = "<group>";
+		};
+		949700082B1870B7009F64A9 /* LogicModels */ = {
+			isa = PBXGroup;
+			children = (
+				942923F22B0E314A000D421A /* Order.swift */,
+				94BA6C182B04A393005B53BB /* PurchasesStatusEnum.swift */,
+			);
+			path = LogicModels;
+			sourceTree = "<group>";
+		};
+		9497000B2B18909D009F64A9 /* OrdersPage */ = {
+			isa = PBXGroup;
+			children = (
+				945344612B0399EE00C1C9F4 /* OrderListVC.swift */,
+				9497000C2B1890EB009F64A9 /* UIComponents */,
+			);
+			path = OrdersPage;
+			sourceTree = "<group>";
+		};
+		9497000C2B1890EB009F64A9 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				94CD2B772B0B6CBA002433B4 /* OrderListImage.swift */,
+				94BA6C1A2B04CE3E005B53BB /* PurchasesStatusIcon.swift */,
+				94BA6C1C2B06312A005B53BB /* PurchasesInfoLabels.swift */,
+				9453445F2B03980200C1C9F4 /* OrderCell.swift */,
+				949DC5312B09E9A0000D6E91 /* OrderHeaderView.swift */,
+				943F0D522B16076D00A5629D /* IconNamesEnum.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -213,19 +245,19 @@
 				94BA6C192B04A393005B53BB /* PurchasesStatusEnum.swift in Sources */,
 				949DC5322B09E9A0000D6E91 /* OrderHeaderView.swift in Sources */,
 				942923F32B0E314B000D421A /* Order.swift in Sources */,
-				943F0D572B1630DB00A5629D /* ScrollViewRowWith2LabelsModel.swift in Sources */,
-				94BA6C1B2B04CE3E005B53BB /* CustomIcon.swift in Sources */,
-				9440A5292B1372CB00760D14 /* ScrollViewRowWith2Labels.swift in Sources */,
+				943F0D572B1630DB00A5629D /* IconLabelLabelRowModel.swift in Sources */,
+				94BA6C1B2B04CE3E005B53BB /* PurchasesStatusIcon.swift in Sources */,
+				9440A5292B1372CB00760D14 /* IconLabelLabelRow.swift in Sources */,
 				945344602B03980200C1C9F4 /* OrderCell.swift in Sources */,
 				942F52002B025359004CDC58 /* MainTabBar.swift in Sources */,
-				943F0D552B16296500A5629D /* Model-ScrollViewRowWith1Labels.swift in Sources */,
+				943F0D552B16296500A5629D /* IconLabelChevronRowModel.swift in Sources */,
 				942F51E82B021407004CDC58 /* AppDelegate.swift in Sources */,
-				94CD2B782B0B6CBA002433B4 /* CustomImage.swift in Sources */,
+				94CD2B782B0B6CBA002433B4 /* OrderListImage.swift in Sources */,
 				94BA6C1D2B06312A005B53BB /* PurchasesInfoLabels.swift in Sources */,
-				9440A5272B13728200760D14 /* ScrollViewRowWith1Labels.swift in Sources */,
-				9440A5252B1371CA00760D14 /* SettingsView.swift in Sources */,
+				9440A5272B13728200760D14 /* IconLabelChevronRow.swift in Sources */,
+				9440A5252B1371CA00760D14 /* SettingsVC.swift in Sources */,
 				9440A52B2B13735600760D14 /* UIView+Layout.swift in Sources */,
-				945344622B0399EE00C1C9F4 /* orderListController.swift in Sources */,
+				945344622B0399EE00C1C9F4 /* OrderListVC.swift in Sources */,
 				943F0D502B149DA700A5629D /* DeleteButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

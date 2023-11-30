@@ -1,7 +1,7 @@
 import UIKit
 
 class DeleteButton: UIButton {
-
+    
     init(title: String) {
         super.init(frame: .zero)
         

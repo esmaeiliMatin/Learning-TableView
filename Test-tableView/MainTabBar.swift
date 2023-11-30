@@ -1,6 +1,6 @@
 import UIKit
 
-class MainController: UITabBarController {
+class MainTabBar: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,7 +13,7 @@ class MainController: UITabBarController {
         homePage.view.backgroundColor = .systemCyan
         homePage.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
         
-        let orderListPage = TableViewController()
+        let orderListPage = OrderListController()
         orderListPage.tabBarItem = UITabBarItem(title: "Orders", image: UIImage(systemName: "list.dash.header.rectangle"), tag: 1)
         
         let cartPage = UIViewController()

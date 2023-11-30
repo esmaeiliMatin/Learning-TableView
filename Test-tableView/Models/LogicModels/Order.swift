@@ -9,14 +9,14 @@ import Foundation
 
 struct Order {
     
-    var status: statusOfPurchases
-    var id: String
-    var date: Date
-    var price: Double
+    var status: PurchasesStatusEnum
     var deliveryLocation: String
-    var countOfItems: Int
+    var price: Double
+    var countOfItems: Int // It's just testing UI
+    let date: Date
+    let id: String
     
-    init(status: statusOfPurchases, price: Double, deliveryLocation: String, countOfItems: Int) {
+    init(status: PurchasesStatusEnum, price: Double, deliveryLocation: String, countOfItems: Int) {
         self.status = status
         self.price = price
         self.deliveryLocation = deliveryLocation

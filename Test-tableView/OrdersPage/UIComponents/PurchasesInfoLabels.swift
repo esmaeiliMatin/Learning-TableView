@@ -1,5 +1,5 @@
 //
-//  InfoLabels.swift
+//  PurchasesInfoLabels.swift
 //  Test-tableView
 //
 //  Created by Matin on 2023-11-16.

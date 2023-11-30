@@ -1,5 +1,5 @@
 //
-//  HeaderView.swift
+//  OrderHeaderView.swift
 //  Test-tableView
 //
 //  Created by Matin on 2023-11-19.
@@ -7,12 +7,11 @@
 
 import UIKit
 
-class HeaderView: UIView {
+class OrderHeaderView: UIView {
     
-    let view: UIView = {
+    lazy var view: UIView = {
         let view = UIView()
         view.backgroundColor = .white
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -28,21 +27,16 @@ class HeaderView: UIView {
         view.text = "My Order"
         view.font = UIFont.systemFont(ofSize: 30, weight: .medium)
         view.textColor = .black
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let segmentedControl = UISegmentedControl(items: ["All", "On Process", "Previous"])
+    lazy var segmentedControl = UISegmentedControl(items: ["All", "On Process", "Previous"])
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    init(frame: CGRect, s: String) {
         super.init(frame: frame)
         
         addSubview(view)
@@ -58,10 +52,11 @@ class HeaderView: UIView {
         segmentedControl.setBackgroundImage(UIImage(named: "segmentedBackground"), for: .normal, barMetrics: .default)
         segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
         view.addSubview(segmentedControl)
-        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         segmentedControl.setSize(width: 430, height: 40)
         segmentedControl.alignAllEdgesWithSuperview(side: .bottom, .init(top: 0, left: 0, bottom: 0, right: 0))
+        
         segmentedControl.addSubview(indicator)
+        
         segmentedControlValueChanged(segmentedControl)
     }
     
