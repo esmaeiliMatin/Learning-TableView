@@ -56,33 +56,36 @@ class SettingsView: UIViewController {
         return view
     }()
     
-    override var navigationItem: UINavigationItem {
-        // if this is in a tabbarcontroller, use tabbar navigationitem else use super
-        super.navigationItem
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = #colorLiteral(red: 0.9719485641, green: 0.9719484448, blue: 0.9719485641, alpha: 1)
+        view.backgroundColor = UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1)
         
         view.addSubview(scrollView)
         scrollView.alignAllEdgesWithSuperview(side: .allSides)
         
         scrollView.addSubview(stack)
         stack.setSize(width: 430)
-        stack.alignAllEdgesWithSuperview(side: .allSides, .init(top: 50, left: 0, bottom: 0, right: 0))
-           
+        stack.alignAllEdgesWithSuperview(side: .allSides, .init(top: 10, left: 0, bottom: 0, right: 0))
+        
         createViews(stack: stack)
         
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = .clear
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .white
         appearance.shadowColor = .clear
-        navigationItem.standardAppearance = appearance
-        navigationItem.scrollEdgeAppearance = appearance
-        navigationItem.compactAppearance = appearance
-        navigationItem.compactScrollEdgeAppearance = appearance
+        navigationController?.navigationBar.standardAppearance = appearance
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let tabBarController = self.tabBarController {
+            print("1")
+            tabBarController.title = "Settings"
+            tabBarController.tabBar.isTranslucent = false
+        } else {
+            // TODO: use VC navigation here instead of tabbarVC navigation
+            print("2")
+        }
     }
 }
 
@@ -111,4 +114,3 @@ extension SettingsView {
         stack.addArrangedSubview(logout)
     }
 }
-
