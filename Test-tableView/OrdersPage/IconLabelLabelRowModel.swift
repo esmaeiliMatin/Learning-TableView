@@ -5,10 +5,11 @@
 //  Created by Matin on 2023-11-28.
 //
 
-import Foundation
+import UIKit
 
 struct IconLabelLabelRowModel {
-    let iconName: String
-    let title1: String
-    let title2: String
+    
+    let parent: IconLabelRowDataModel
+    let rightTitle: String
+    let rightTitleColor: UIColor
 }

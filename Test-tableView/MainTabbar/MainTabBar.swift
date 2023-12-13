@@ -6,6 +6,9 @@ class MainTabBar: UITabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
         self.delegate = self
         
+        let customTabbar = CustomTabBar()
+        setCustomTabBar(customTabbar)
+        
         tabBar.tintColor = .black
         tabBar.backgroundColor = .white
         
@@ -18,7 +21,7 @@ class MainTabBar: UITabBarController, UITabBarControllerDelegate {
         let cartPage = UIViewController()
         cartPage.tabBarItem = UITabBarItem(title: "Cart", image: UIImage(systemName: "cart"), tag: 2)
         
-        let settingsPage = SettingsView()
+        let settingsPage = SettingsVC()
         settingsPage.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gearshape"), tag: 3)
         
         viewControllers = [homePage, orderListPage, cartPage, settingsPage]
@@ -33,5 +36,12 @@ class MainTabBar: UITabBarController, UITabBarControllerDelegate {
         selectedIndex = 1
         
         UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 6)
+    }
+}
+
+fileprivate extension MainTabBar {
+    
+    func setCustomTabBar(_ customTabBar: UITabBar) {
+        setValue(customTabBar, forKey: "tabBar")
     }
 }

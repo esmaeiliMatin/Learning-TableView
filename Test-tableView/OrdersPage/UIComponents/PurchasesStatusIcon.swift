@@ -2,8 +2,8 @@ import UIKit
 
 class PurchasesStatusIcon: UIView {
     
-    var name: String = ""
-    var uiImageView = UIImageView()
+    lazy var name: String = ""
+    lazy var uiImageView = UIImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -17,7 +17,7 @@ class PurchasesStatusIcon: UIView {
     
     override func draw(_ rect: CGRect) {
         let circlePath = UIBezierPath(ovalIn: self.bounds.insetBy(dx: 1, dy: 1))
-        let strokeColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1)
+        let strokeColor = #colorLiteral(red: 0.8894182444, green: 0.8894182444, blue: 0.8894182444, alpha: 1)
         strokeColor.setStroke()
         circlePath.lineWidth = 1.0
         circlePath.stroke()

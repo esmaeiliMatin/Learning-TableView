@@ -21,12 +21,11 @@ class OrderListImage: UIView {
     lazy var countOfProduct: UILabel = {
         let view = UILabel()
         view.font = UIFont.systemFont(ofSize: 10, weight: .medium)
-        view.textColor = UIColor(red: 150/255, green: 150/255, blue: 150/255, alpha: 1)
-        view.text = String(Int.random(in: 0...9)) + "X"
+        view.textColor = #colorLiteral(red: 0.5882352941, green: 0.5882352941, blue: 0.5882352941, alpha: 1)
         view.backgroundColor = .white
         view.layer.cornerRadius = 6
         view.layer.borderWidth = 0.5
-        view.layer.borderColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1).cgColor
+        view.layer.borderColor = #colorLiteral(red: 0.862745098, green: 0.862745098, blue: 0.862745098, alpha: 1)
         view.layer.masksToBounds = true
         view.textAlignment = .center
         view.setSize(width: 20, height: 20)
@@ -49,7 +48,7 @@ class OrderListImage: UIView {
         imageView.setCenterAnchorToCenterOfSuperview(axis: .horizontal)
         imageView.setCenterAnchorToCenterOfSuperview(axis: .vertical)
         
-        countOfProduct.text = "+" + count
+        countOfProduct.text = "X" + count
         addSubview(countOfProduct)
         countOfProduct.setCenterAnchorToCenterOfSuperview(axis: .horizontal)
         countOfProduct.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -10).isActive = true

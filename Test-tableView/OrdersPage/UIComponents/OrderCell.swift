@@ -17,6 +17,7 @@ class OrderCell: UITableViewCell {
     lazy var statusLabel: UILabel = {
         let view = UILabel()
         view.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        view.backgroundColor = .white
         return view
     }()
     
@@ -29,23 +30,23 @@ class OrderCell: UITableViewCell {
     }()
     
     lazy var leftInfoLabel: PurchasesInfoLabels = {
-        let view = PurchasesInfoLabels()
+        let view = PurchasesInfoLabels(frame: .zero, staticText: "Order ID", dynamicText: "")
         return view
     }()
     
     lazy var midInfoLabel: PurchasesInfoLabels = {
-        let view = PurchasesInfoLabels()
+        let view = PurchasesInfoLabels(frame: .zero, staticText: "Deliver To", dynamicText: "")
         return view
     }()
     
     lazy var rightInfoLabel: PurchasesInfoLabels = {
-        let view = PurchasesInfoLabels()
+        let view = PurchasesInfoLabels(frame: .zero, staticText: "Total Payment", dynamicText: "")
         return view
     }()
     
     lazy var statusIcon = PurchasesStatusIcon(frame: .zero)
     
-    private lazy var allInfoStack: UIStackView = {
+    private lazy var infoStack: UIStackView = {
         let view = UIStackView()
         view.distribution = .fillEqually
         view.axis = .horizontal
@@ -59,50 +60,37 @@ class OrderCell: UITableViewCell {
         return view
     }()
     
-    static let AllImages: [OrderListImage] = [
-        OrderListImage(frame: .zero, imageName: "image-1", count: "4"),
-        OrderListImage(frame: .zero, imageName: "image-2", count: "1"),
-        OrderListImage(frame: .zero, imageName: "image-3", count: "2"),
-        OrderListImage(frame: .zero, imageName: "image-4", count: "7"),
-        OrderListImage(frame: .zero, imageName: "image-5", count: "2"),
-        OrderListImage(frame: .zero, imageName: "image-6", count: "9")
-    ]
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        backgroundColor = UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1)
         
         view.backgroundColor = .white
         contentView.addSubview(view)
-        view.alignAllEdgesWithSuperview(side: .allSides, .init(top: 0, left: 0, bottom: -16, right: 0))
+        view.alignAllEdgesWithSuperview(side: .allSides, .init(top: 0, left: 0, bottom: -12, right: 0))
         
-        statusLabel.backgroundColor = .white
         view.addSubview(statusLabel)
-        statusLabel.setSize(width: 150, height: 40)
         statusLabel.alignAllEdgesWithSuperview(side: .leading, .init(top: 0, left: 70, bottom: 0, right: 0))
-        statusLabel.alignAllEdgesWithSuperview(side: .top, .init(top: 40, left: 0, bottom: 0, right: 0))
+        statusLabel.alignAllEdgesWithSuperview(side: .top, .init(top: 30, left: 0, bottom: 0, right: 0))
         
         view.addSubview(statusIcon)
         statusIcon.setSize(width: 34, height: 34)
-        statusIcon.alignAllEdgesWithSuperview(side: .leading, .init(top: 0, left: 20, bottom: 0, right: 0))
-        statusIcon.alignAllEdgesWithSuperview(side: .top, .init(top: 42, left: 0, bottom: 0, right: 0))
+        statusIcon.alignAllEdgesWithSuperview(side: .leading, .init(top: 0, left: 22, bottom: 0, right: 0))
+        statusIcon.alignAllEdgesWithSuperview(side: .top, .init(top: 22, left: 0, bottom: 0, right: 0))
         
         view.addSubview(dateLabel)
-        dateLabel.setSize(width: 120, height: 40)
         dateLabel.alignAllEdgesWithSuperview(side: .trailing, .init(top: 0, left: 0, bottom: 0, right: -24))
-        dateLabel.alignAllEdgesWithSuperview(side: .top, .init(top: 40, left: 0, bottom: 0, right: 0))
-
-        allInfoStack.addArrangedSubview(leftInfoLabel)
-        allInfoStack.addArrangedSubview(midInfoLabel)
-        allInfoStack.addArrangedSubview(rightInfoLabel)
-        view.addSubview(allInfoStack)
-        allInfoStack.alignAllEdgesWithSuperview(side: .allSides, .init(top: 100, left: 20, bottom: -154, right: -20))
+        dateLabel.alignAllEdgesWithSuperview(side: .top, .init(top: 30, left: 0, bottom: 0, right: 0))
         
-        imageStack.addArrangedSubview(OrderListImage(frame: .zero, imageName: "image-1", count: "2"))
-        imageStack.addArrangedSubview(OrderListImage(frame: .zero, imageName: "image-2", count: "2"))
-        imageStack.addArrangedSubview(OrderListImage(frame: .zero, imageName: "image-3", count: "2"))
-        imageStack.addArrangedSubview(OrderListImage(frame: .zero, imageName: "image-4", count: "2"))
+        infoStack.addArrangedSubview(leftInfoLabel)
+        infoStack.addArrangedSubview(midInfoLabel)
+        infoStack.addArrangedSubview(rightInfoLabel)
+        view.addSubview(infoStack)
+        infoStack.setSize(height: 80)
+        infoStack.alignAllEdgesWithSuperview(side: .leadingAndTrailing, .init(top: 0, left: 30, bottom: 0, right: -30))
+        infoStack.alignAllEdgesWithSuperview(side: .top, .init(top: 90, left: 0, bottom: 0, right: 0))
+        
         view.addSubview(imageStack)
-        imageStack.alignAllEdgesWithSuperview(side: .allSides, .init(top: 200, left: 24, bottom: -16, right: -24))
+        imageStack.alignAllEdgesWithSuperview(side: .allSides, .init(top: 230, left: 24, bottom: -80, right: -24))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -110,31 +98,30 @@ class OrderCell: UITableViewCell {
     }
     
     func configurate(order: Order) {
-        backgroundColor = UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1)
-        
-        let imageName: IconNamesEnum
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d, yyyy"
-        
-        dateLabel.text = dateFormatter.string(from: order.date)
-        statusLabel.text = order.status.rawValue
-        leftInfoLabel.canfigure(staticText: "Order ID", dynamicText: order.id)
-        midInfoLabel.canfigure(staticText: "Deliver To", dynamicText: order.deliveryLocation)
-        rightInfoLabel.canfigure(staticText: "Total Payment", dynamicText: String(order.price))
+        statusLabel.text = order.status
+        dateLabel.text = order.date
+        leftInfoLabel.dynamicLabel.text = order.id
+        midInfoLabel.dynamicLabel.text = order.deliveryPlace
+        rightInfoLabel.dynamicLabel.text = "$" + String(order.price)
         
         switch order.status {
-        case .delivered:
-            imageName = IconNamesEnum.delivered
-        case .processing:
-            imageName = IconNamesEnum.processing
-        case .cancel:
-            imageName = IconNamesEnum.cancel
-        case .noInfo:
-            imageName = IconNamesEnum.noInfo
-        case .waitForPayment:
-            imageName = IconNamesEnum.waitForPayment
+        case "Processing":
+            statusIcon.setImage(imageName: IconNamesEnum.processing)
+        case "Waiting for Payment":
+            statusIcon.setImage(imageName: IconNamesEnum.waitForPayment)
+        case "Canceled":
+            statusIcon.setImage(imageName: IconNamesEnum.cancel)
+        case "Finished":
+            statusIcon.setImage(imageName: IconNamesEnum.delivered)
+        default:
+            statusIcon.setImage(imageName: IconNamesEnum.cancel)
         }
         
-        statusIcon.setImage(imageName: imageName)
+        imageStack.arrangedSubviews.forEach({ $0.removeFromSuperview() })
+        
+        for image in order.media {
+            let picture = OrderListImage(frame: .zero, imageName: image, count: "2")
+            imageStack.addArrangedSubview(picture)
+        }
     }
 }

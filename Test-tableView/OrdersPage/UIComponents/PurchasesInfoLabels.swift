@@ -9,18 +9,16 @@ import UIKit
 
 class PurchasesInfoLabels: UIView {
     
-    var staticLabel: UILabel = {
+    lazy var staticLabel: UILabel = {
         let view = UILabel()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         view.textColor = .systemGray
         view.textAlignment = .left
         return view
     }()
     
-    var dynamicLabel: UILabel = {
+    lazy var dynamicLabel: UILabel = {
         let view = UILabel()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         view.textColor = .black
         view.textAlignment = .left
@@ -29,8 +27,6 @@ class PurchasesInfoLabels: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        canfigure(staticText: "NOT SET", dynamicText: "NOT SET")
     }
     
     required init?(coder: NSCoder) {
@@ -39,21 +35,18 @@ class PurchasesInfoLabels: UIView {
     
     init(frame: CGRect, staticText: String, dynamicText: String) {
         super.init(frame: frame)
+        addSubview(staticLabel)
+        addSubview(dynamicLabel)
+        staticLabel.alignAllEdgesWithSuperview(side: .top, .init(top: 18, left: 0, bottom: 0, right: 0))
+        staticLabel.alignAllEdgesWithSuperview(side: .leading, .init(top: 0, left: 0, bottom: 0, right: 0))
+        dynamicLabel.alignAllEdgesWithSuperview(side: .top, .init(top: 50, left: 0, bottom: 0, right: 0))
+        dynamicLabel.alignAllEdgesWithSuperview(side: .leading, .init(top: 0, left: 0, bottom: 0, right: 0))
         canfigure(staticText: staticText, dynamicText: dynamicText)
     }
     
     func canfigure(staticText: String, dynamicText: String) {
-        staticLabel.text = staticText
-        addSubview(staticLabel)
         
-        staticLabel.setSize(width: 120,height: 34)
-        staticLabel.setCenterAnchorToCenterOfSuperview(axis: .horizontal)
-        staticLabel.alignAllEdgesWithSuperview(side: .bottom, .init(top: 0, left: 0, bottom: -14, right: 0))
-
+        staticLabel.text = staticText
         dynamicLabel.text = dynamicText
-        addSubview(dynamicLabel)
-        dynamicLabel.setSize(width: 120, height: 34)
-        dynamicLabel.setCenterAnchorToCenterOfSuperview(axis: .horizontal)
-        dynamicLabel.alignAllEdgesWithSuperview(side: .bottom, .init(top: 0, left: 0, bottom: 16, right: 0))
     }
 }

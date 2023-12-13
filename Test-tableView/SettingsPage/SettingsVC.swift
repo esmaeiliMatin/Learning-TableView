@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SettingsVC.swift
 //  Test-ScrollView
 //
 //  Created by Matin on 2023-11-08.
@@ -7,23 +7,15 @@
 
 import UIKit
 
-class SettingsView: UIViewController {
-    
-    // MARK: - Models
-    let languageModel = IconLabelLabelRowModel(iconName: "globe", title1: "Language", title2: "English") //magnifyingglass
-    let currentVersionModel = IconLabelLabelRowModel(iconName: "magnifyingglass", title1: "Current Version", title2: "1.1.2")
-    let notificationsModel = IconLabelChevronRowModel(IconName: "heart", title: "Notifications", hasForwardArrow: false)
-    let faqModel = IconLabelChevronRowModel(IconName: "magnifyingglass", title: "FAQ", hasForwardArrow: true)
-    let aboutUsModel = IconLabelChevronRowModel(IconName: "questionmark.circle", title: "About us", hasForwardArrow: true)
-    let privacyPolicyModel = IconLabelChevronRowModel(IconName: "checkmark.shield", title: "Privacy Policy", hasForwardArrow: true)
-    let termsAndConditionsModel = IconLabelChevronRowModel(IconName: "newspaper", title: "Terms and Conditions", hasForwardArrow: true)
-    let deleteAcountModel = IconLabelChevronRowModel(IconName: "person.crop.circle.badge.xmark", title: "Delete Account", hasForwardArrow: true)
+class SettingsVC: BaseViewController {
     
     // MARK: - prareties
+    
     private lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
-        view.contentInset = .init(top: 10, left: 0, bottom: 0, right: 0)
+        view.backgroundColor = #colorLiteral(red: 0.9719485641, green: 0.9719484448, blue: 0.9719485641, alpha: 1)
         view.alwaysBounceVertical = true
+        view.showsVerticalScrollIndicator = false
         return view
     }()
     
@@ -34,71 +26,32 @@ class SettingsView: UIViewController {
         return view
     }()
     
-    lazy var language = IconLabelLabelRow(frame: .zero, model: languageModel)
-    lazy var notifications = IconLabelChevronRow(frame: .zero, model: notificationsModel)
-    lazy var currentVersion = IconLabelLabelRow(frame: .zero, model: currentVersionModel)
-    lazy var faq = IconLabelChevronRow(frame: .zero, model: faqModel)
-    lazy var aboutUs = IconLabelChevronRow(frame: .zero, model: aboutUsModel)
-    lazy var privacyPolicy = IconLabelChevronRow(frame: .zero, model: privacyPolicyModel)
-    lazy var termsAndConditions = IconLabelChevronRow(frame: .zero, model: termsAndConditionsModel)
-    lazy var deleteAccount = IconLabelChevronRow(frame: .zero, model: deleteAcountModel)
-    lazy var logout = UIView()
-    lazy var deleteButton: DeleteButton = {
-        let view = DeleteButton(title: "Log out")
-        view.setImage(UIImage(systemName: "door.right.hand.open"), for: .normal)
-        view.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -8)
-        view.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 8)
-        return view
-    }()
-    lazy var switchButton: UISwitch = {
-        let view = UISwitch()
-        view.onTintColor = UIColor(red: 157/255, green: 191/255, blue: 67/255, alpha: 1)
-        return view
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        let settingsRepository = SettingsRepository().decodedData()
         
-        view.backgroundColor = UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1)
+        lazy var language = IconLabelLabelRow(frame: .zero, model: settingsRepository[0])
+        lazy var notifications = IconLabelSwitchRow(frame: .zero, model: settingsRepository[2])
+        lazy var currentVersion = IconLabelLabelRow(frame: .zero, model: settingsRepository[1])
+        lazy var faq = IconLabelChevronRow(frame: .zero, model: settingsRepository[3])
+        lazy var aboutUs = IconLabelChevronRow(frame: .zero, model: settingsRepository[4])
+        lazy var privacyPolicy = IconLabelChevronRow(frame: .zero, model: settingsRepository[5])
+        lazy var termsAndConditions = IconLabelChevronRow(frame: .zero, model: settingsRepository[6])
+        lazy var deleteAccount = IconLabelChevronRow(frame: .zero, model: settingsRepository[7])
+        lazy var logout = UIView()
+        lazy var deleteButton = DeleteButton(title: "Log out", iconName: "door.right.hand.open")
         
         view.addSubview(scrollView)
-        scrollView.alignAllEdgesWithSuperview(side: .allSides)
+        scrollView.alignAllEdgesWithSuperview(side: .allSides, .init(top: 100, left: 0, bottom: 0, right: 0))
         
         scrollView.addSubview(stack)
         stack.setSize(width: 430)
         stack.alignAllEdgesWithSuperview(side: .allSides, .init(top: 10, left: 0, bottom: 0, right: 0))
         
-        createViews(stack: stack)
-        
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .white
-        appearance.shadowColor = .clear
-        navigationController?.navigationBar.standardAppearance = appearance
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        if let tabBarController = self.tabBarController {
-            print("1")
-            tabBarController.title = "Settings"
-            tabBarController.tabBar.isTranslucent = false
-        } else {
-            // TODO: use VC navigation here instead of tabbarVC navigation
-            print("2")
-        }
-    }
-}
-
-extension SettingsView {
-    
-    func createViews(stack: UIStackView) {
-        
-        notifications.addSubview(switchButton)
-        switchButton.alignAllEdgesWithSuperview(side: .allSides, .init(top: 26, left: 350, bottom: 0, right: 0))
-        
         logout.setSize(height: 112)
-        
         logout.addSubview(deleteButton)
+        
         deleteButton.setSize(width: 360, height: 66)
         deleteButton.setCenterAnchorToCenterOfSuperview(axis: .vertical)
         deleteButton.setCenterAnchorToCenterOfSuperview(axis: .horizontal)
@@ -112,5 +65,13 @@ extension SettingsView {
         stack.addArrangedSubview(termsAndConditions)
         stack.addArrangedSubview(deleteAccount)
         stack.addArrangedSubview(logout)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let tabBarController = self.tabBarController {
+            tabBarController.title = "Settings"
+        }
     }
 }

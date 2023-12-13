@@ -1,0 +1,48 @@
+[
+    {
+        "type": "IconLabelLabelRow",
+        "iconName": "globe",
+        "title": "Language",
+        "title2": "English"
+    },
+    {
+        "type": "IconLabelLabelRow",
+        "iconName": "magnifyingglass",
+        "title": "Current Version",
+        "title2": "1.1.2"
+    },
+    {
+        "type": "IconLabelRowModel",
+        "iconName": "heart",
+        "title": "Notifications",
+        "switchButton": true,
+    },
+    {
+        "type": "IconLabelChevronRow",
+        "iconName": "magnifyingglass",
+        "title": "FAQ"
+    },
+    {
+        "type": "questionmark.circle",
+        "iconName": "magnifyingglass",
+        "title": "About us"
+    },
+    {
+        "type": "IconLabelChevronRow",
+        "iconName": "checkmark.shield",
+        "title": "Privacy Policy"
+    },
+    {
+        "type": "IconLabelChevronRow",
+        "iconName": "newspaper",
+        "title": "Terms and Conditions"
+    },
+    {
+        "type": "IconLabelChevronRow",
+        "iconName": "person.crop.circle.badge.xmark",
+        "title": "Delete Account"
+    },
+]
+
+
+ 

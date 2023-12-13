@@ -32,8 +32,8 @@ class OrderHeaderView: UIView {
         segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
         addSubview(segmentedControl)
         segmentedControl.setSize(width: 430, height: 40)
-        segmentedControl.alignAllEdgesWithSuperview(side: .bottom, .init(top: 0, left: 0, bottom: 0, right: 0))
-        
+        segmentedControl.alignAllEdgesWithSuperview(side: .allSides, .init(top: 0, left: 0, bottom: 0, right: 0))
+
         segmentedControl.addSubview(indicator)
         
         segmentedControlValueChanged(segmentedControl)
