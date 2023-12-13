@@ -2,17 +2,20 @@
 //  OrderListController.swift
 //  Test-tableView
 //
-//  Created by Matin on 2023-11-14.
+//  Created by Matin on 2023-12-13.
 //
 
 import UIKit
 
 class OrderListController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
     
-    lazy var orders: [Order] = []
-    lazy var orderRepository = OrderRepository()
+    // MARK: - Property
     lazy var cellReuseIdentifier = "CustomCell"
     lazy var heightForRowAt = 330.0
+    lazy var orderViewModel = OrderViewModel()
+    lazy var orders = orderViewModel.orders
+    lazy var navigationTitle = "My Order"
+    
     lazy var tableView: UITableView = {
         let view = UITableView()
         view.backgroundColor = #colorLiteral(red: 0.9719485641, green: 0.9719484448, blue: 0.9719485641, alpha: 1)
@@ -22,17 +25,16 @@ class OrderListController: BaseViewController, UITableViewDataSource, UITableVie
     }()
     lazy var segmentedView = OrderHeaderView()
     
+    // MARK: -  view did load
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        orders = orderRepository.decodedData()
         
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(OrderCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-        
         view.addSubview(tableView)
         tableView.alignAllEdgesWithSuperview(side: .allSides, .init(top: 136, left: 0, bottom: 0, right: 0))
+        
         view.addSubview(segmentedView)
         segmentedView.setSize(height: 40)
         segmentedView.alignAllEdgesWithSuperview(side: .top, .init(top: 96, left: 0, bottom: 0, right: 0))
@@ -43,13 +45,13 @@ class OrderListController: BaseViewController, UITableViewDataSource, UITableVie
         super.viewWillAppear(animated)
         
         if let tabBarController = self.tabBarController {
-            tabBarController.title = "My Order"
+            tabBarController.title = navigationTitle
         }
     }
     
     // MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return orders.count
+        return orderViewModel.orders.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

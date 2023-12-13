@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+class OrderViewModel {
+    
+    // MARK: - Praperties
+    lazy var orderRepository = OrderRepository()
+    lazy var orders: [Order] = []
+    
+    init() {
+        orders = orderRepository.decodedData()
+    }
+}

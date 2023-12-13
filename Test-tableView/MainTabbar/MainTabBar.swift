@@ -21,7 +21,7 @@ class MainTabBar: UITabBarController, UITabBarControllerDelegate {
         let cartPage = UIViewController()
         cartPage.tabBarItem = UITabBarItem(title: "Cart", image: UIImage(systemName: "cart"), tag: 2)
         
-        let settingsPage = SettingsVC()
+        let settingsPage = SettingsViewController()
         settingsPage.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gearshape"), tag: 3)
         
         viewControllers = [homePage, orderListPage, cartPage, settingsPage]

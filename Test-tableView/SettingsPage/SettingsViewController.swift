@@ -1,5 +1,5 @@
 //
-//  SettingsVC.swift
+//  SettingsViewController.swift
 //  Test-ScrollView
 //
 //  Created by Matin on 2023-11-08.
@@ -7,9 +7,11 @@
 
 import UIKit
 
-class SettingsVC: BaseViewController {
+class SettingsViewController: BaseViewController {
     
     // MARK: - prareties
+    
+    lazy var settingsRepository = SettingsRepository()
     
     private lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
@@ -25,20 +27,21 @@ class SettingsVC: BaseViewController {
         view.spacing = 0
         return view
     }()
+    // MARK: - view did load
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        let settingsRepository = SettingsRepository().decodedData()
         
-        lazy var language = IconLabelLabelRow(frame: .zero, model: settingsRepository[0])
-        lazy var notifications = IconLabelSwitchRow(frame: .zero, model: settingsRepository[2])
-        lazy var currentVersion = IconLabelLabelRow(frame: .zero, model: settingsRepository[1])
-        lazy var faq = IconLabelChevronRow(frame: .zero, model: settingsRepository[3])
-        lazy var aboutUs = IconLabelChevronRow(frame: .zero, model: settingsRepository[4])
-        lazy var privacyPolicy = IconLabelChevronRow(frame: .zero, model: settingsRepository[5])
-        lazy var termsAndConditions = IconLabelChevronRow(frame: .zero, model: settingsRepository[6])
-        lazy var deleteAccount = IconLabelChevronRow(frame: .zero, model: settingsRepository[7])
+        lazy var settingsRowData = settingsRepository.decodedData()
+        
+        lazy var language = IconLabelLabelRow(frame: .zero, model: settingsRowData[0])
+        lazy var notifications = IconLabelSwitchRow(frame: .zero, model: settingsRowData[2])
+        lazy var currentVersion = IconLabelLabelRow(frame: .zero, model: settingsRowData[1])
+        lazy var faq = IconLabelChevronRow(frame: .zero, model: settingsRowData[3])
+        lazy var aboutUs = IconLabelChevronRow(frame: .zero, model: settingsRowData[4])
+        lazy var privacyPolicy = IconLabelChevronRow(frame: .zero, model: settingsRowData[5])
+        lazy var termsAndConditions = IconLabelChevronRow(frame: .zero, model: settingsRowData[6])
+        lazy var deleteAccount = IconLabelChevronRow(frame: .zero, model: settingsRowData[7])
         lazy var logout = UIView()
         lazy var deleteButton = DeleteButton(title: "Log out", iconName: "door.right.hand.open")
         

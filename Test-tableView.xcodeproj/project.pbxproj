@@ -12,11 +12,11 @@
 		942F51F12B021408004CDC58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 942F51F02B021408004CDC58 /* Assets.xcassets */; };
 		942F52002B025359004CDC58 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F51FF2B025359004CDC58 /* MainTabBar.swift */; };
 		94323EF22B29C245007B1D71 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94323EF12B29C245007B1D71 /* OrderViewModel.swift */; };
+		94323EF42B29C941007B1D71 /* OrderListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94323EF32B29C941007B1D71 /* OrderListController.swift */; };
+		94323EF62B29DF2D007B1D71 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94323EF52B29DF2D007B1D71 /* SettingsViewController.swift */; };
+		94323EF82B29DF71007B1D71 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94323EF72B29DF71007B1D71 /* SettingsViewModel.swift */; };
 		943F0D502B149DA700A5629D /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943F0D4F2B149DA700A5629D /* DeleteButton.swift */; };
 		943F0D532B16076D00A5629D /* IconNamesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943F0D522B16076D00A5629D /* IconNamesEnum.swift */; };
-		943F0D552B16296500A5629D /* IconLabelRowDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943F0D542B16296500A5629D /* IconLabelRowDataModel.swift */; };
-		943F0D572B1630DB00A5629D /* IconLabelLabelRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943F0D562B1630DB00A5629D /* IconLabelLabelRowModel.swift */; };
-		9440A5252B1371CA00760D14 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9440A5242B1371CA00760D14 /* SettingsVC.swift */; };
 		9440A5272B13728200760D14 /* IconLabelChevronRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9440A5262B13728200760D14 /* IconLabelChevronRow.swift */; };
 		9440A5292B1372CB00760D14 /* IconLabelLabelRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9440A5282B1372CB00760D14 /* IconLabelLabelRow.swift */; };
 		9440A52B2B13735600760D14 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9440A52A2B13735600760D14 /* UIView+Layout.swift */; };
@@ -25,7 +25,6 @@
 		9448C0812B1F5834009D22DC /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9448C0802B1F5834009D22DC /* CustomTabbar.swift */; };
 		9448C0832B1F5EA3009D22DC /* BaseSettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9448C0822B1F5EA3009D22DC /* BaseSettingsRow.swift */; };
 		945344602B03980200C1C9F4 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453445F2B03980200C1C9F4 /* OrderCell.swift */; };
-		945344622B0399EE00C1C9F4 /* OrderListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945344612B0399EE00C1C9F4 /* OrderListVC.swift */; };
 		949DC5322B09E9A0000D6E91 /* OrderHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949DC5312B09E9A0000D6E91 /* OrderHeaderView.swift */; };
 		94A3BD4D2B25963B00EC589B /* OrderUIViewModelData.json in Resources */ = {isa = PBXBuildFile; fileRef = 94A3BD4C2B25963B00EC589B /* OrderUIViewModelData.json */; };
 		94A3BD4F2B25F4C800EC589B /* OrderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A3BD4E2B25F4C800EC589B /* OrderRepository.swift */; };
@@ -46,12 +45,12 @@
 		942F51F52B021408004CDC58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		942F51FF2B025359004CDC58 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		94323EF12B29C245007B1D71 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		94323EF32B29C941007B1D71 /* OrderListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListController.swift; sourceTree = "<group>"; };
+		94323EF52B29DF2D007B1D71 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		94323EF72B29DF71007B1D71 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		943F0D4F2B149DA700A5629D /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
 		943F0D512B14C12A00A5629D /* TODOS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODOS.md; sourceTree = "<group>"; };
 		943F0D522B16076D00A5629D /* IconNamesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconNamesEnum.swift; sourceTree = "<group>"; };
-		943F0D542B16296500A5629D /* IconLabelRowDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconLabelRowDataModel.swift; sourceTree = "<group>"; };
-		943F0D562B1630DB00A5629D /* IconLabelLabelRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconLabelLabelRowModel.swift; sourceTree = "<group>"; };
-		9440A5242B1371CA00760D14 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		9440A5262B13728200760D14 /* IconLabelChevronRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconLabelChevronRow.swift; sourceTree = "<group>"; };
 		9440A5282B1372CB00760D14 /* IconLabelLabelRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconLabelLabelRow.swift; sourceTree = "<group>"; };
 		9440A52A2B13735600760D14 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
@@ -60,7 +59,6 @@
 		9448C0802B1F5834009D22DC /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
 		9448C0822B1F5EA3009D22DC /* BaseSettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSettingsRow.swift; sourceTree = "<group>"; };
 		9453445F2B03980200C1C9F4 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
-		945344612B0399EE00C1C9F4 /* OrderListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListVC.swift; sourceTree = "<group>"; };
 		949DC5312B09E9A0000D6E91 /* OrderHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHeaderView.swift; sourceTree = "<group>"; };
 		94A3BD4C2B25963B00EC589B /* OrderUIViewModelData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OrderUIViewModelData.json; sourceTree = "<group>"; };
 		94A3BD4E2B25F4C800EC589B /* OrderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRepository.swift; sourceTree = "<group>"; };
@@ -128,10 +126,11 @@
 		9440A5232B1371A400760D14 /* SettingsPage */ = {
 			isa = PBXGroup;
 			children = (
-				9440A5242B1371CA00760D14 /* SettingsVC.swift */,
 				94DD6ACA2B270A3600A386D4 /* SettingsRepository.swift */,
+				94323EF52B29DF2D007B1D71 /* SettingsViewController.swift */,
 				94DD6AD22B27276800A386D4 /* SettingsRowDataModel.swift */,
 				9440A52D2B1375A600760D14 /* UIComponents */,
+				94323EF72B29DF71007B1D71 /* SettingsViewModel.swift */,
 			);
 			path = SettingsPage;
 			sourceTree = "<group>";
@@ -168,13 +167,11 @@
 		9497000B2B18909D009F64A9 /* OrdersPage */ = {
 			isa = PBXGroup;
 			children = (
-				945344612B0399EE00C1C9F4 /* OrderListVC.swift */,
-				94323EF12B29C245007B1D71 /* OrderViewModel.swift */,
-				943F0D542B16296500A5629D /* IconLabelRowDataModel.swift */,
-				943F0D562B1630DB00A5629D /* IconLabelLabelRowModel.swift */,
 				94A3BD4E2B25F4C800EC589B /* OrderRepository.swift */,
-				949700082B1870B7009F64A9 /* OrderLogic */,
+				94323EF32B29C941007B1D71 /* OrderListController.swift */,
+				94323EF12B29C245007B1D71 /* OrderViewModel.swift */,
 				9497000C2B1890EB009F64A9 /* UIComponents */,
+				949700082B1870B7009F64A9 /* OrderLogic */,
 			);
 			path = OrdersPage;
 			sourceTree = "<group>";
@@ -294,27 +291,26 @@
 				9448C0832B1F5EA3009D22DC /* BaseSettingsRow.swift in Sources */,
 				949DC5322B09E9A0000D6E91 /* OrderHeaderView.swift in Sources */,
 				942923F32B0E314B000D421A /* Order.swift in Sources */,
-				943F0D572B1630DB00A5629D /* IconLabelLabelRowModel.swift in Sources */,
 				9448C07C2B1F321C009D22DC /* BaseViewController.swift in Sources */,
 				9448C07F2B1F48E3009D22DC /* IconLabelSwitchRow.swift in Sources */,
 				94BA6C1B2B04CE3E005B53BB /* PurchasesStatusIcon.swift in Sources */,
+				94323EF42B29C941007B1D71 /* OrderListController.swift in Sources */,
 				9440A5292B1372CB00760D14 /* IconLabelLabelRow.swift in Sources */,
+				94323EF62B29DF2D007B1D71 /* SettingsViewController.swift in Sources */,
 				9448C0812B1F5834009D22DC /* CustomTabbar.swift in Sources */,
 				945344602B03980200C1C9F4 /* OrderCell.swift in Sources */,
 				942F52002B025359004CDC58 /* MainTabBar.swift in Sources */,
-				943F0D552B16296500A5629D /* IconLabelRowDataModel.swift in Sources */,
 				94A3BD4F2B25F4C800EC589B /* OrderRepository.swift in Sources */,
 				94DD6AD32B27276800A386D4 /* SettingsRowDataModel.swift in Sources */,
 				942F51E82B021407004CDC58 /* AppDelegate.swift in Sources */,
 				94CD2B782B0B6CBA002433B4 /* OrderListImage.swift in Sources */,
 				94BA6C1D2B06312A005B53BB /* PurchasesInfoLabels.swift in Sources */,
 				9440A5272B13728200760D14 /* IconLabelChevronRow.swift in Sources */,
-				9440A5252B1371CA00760D14 /* SettingsVC.swift in Sources */,
 				94DD6ACB2B270A3600A386D4 /* SettingsRepository.swift in Sources */,
 				9440A52B2B13735600760D14 /* UIView+Layout.swift in Sources */,
 				94323EF22B29C245007B1D71 /* OrderViewModel.swift in Sources */,
-				945344622B0399EE00C1C9F4 /* OrderListVC.swift in Sources */,
 				943F0D502B149DA700A5629D /* DeleteButton.swift in Sources */,
+				94323EF82B29DF71007B1D71 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

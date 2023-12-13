@@ -9,6 +9,8 @@ import UIKit
 
 class OrderCell: UITableViewCell {
     
+    // MARK: - Property
+    
     lazy var view: UIView = {
         let view = UIView()
         return view
@@ -60,6 +62,8 @@ class OrderCell: UITableViewCell {
         return view
     }()
     
+    // MARK: - init
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1)
@@ -97,7 +101,10 @@ class OrderCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - functions
+    
     func configurate(order: Order) {
+        
         statusLabel.text = order.status
         dateLabel.text = order.date
         leftInfoLabel.dynamicLabel.text = order.id
