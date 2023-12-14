@@ -7,32 +7,11 @@
 
 import UIKit
 
-class SettingsRepository {
+class SettingsRepository: ApplicationRepositoryProtocol {
     
-    private func readLocalJSONFile(forName name: String) -> Data? {
-        do {
-            if let filePath = Bundle.main.path(forResource: name, ofType: "json") {
-                let fileUrl = URL(fileURLWithPath: filePath)
-                let data = try Data(contentsOf: fileUrl)
-                return data
-            }
-        } catch {
-            print("Error reading JSON file: \(error)")
-        }
-        return nil
-    }
+    let resourceName = "SettingsUIViewModelData"
     
-    func decodedData() -> [SettingsRowDataModel] {
-        if let productsData = readLocalJSONFile(forName: "SettingsUIViewModelData") {
-            do {
-                let decoder = JSONDecoder()
-                let decodedOrders = try decoder.decode([SettingsRowDataModel].self, from: productsData)
-                let decodedOrdersArray: [SettingsRowDataModel] = decodedOrders
-                return decodedOrdersArray
-            } catch {
-                print("Error decoding JSON: \(error)")
-            }
-        }
-        return []
+    func fetchData() -> [SettingModel] {
+        return decodedData(resourceName: resourceName)
     }
 }

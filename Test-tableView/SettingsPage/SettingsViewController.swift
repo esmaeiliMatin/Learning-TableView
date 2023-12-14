@@ -10,8 +10,11 @@ import UIKit
 class SettingsViewController: BaseViewController {
     
     // MARK: - prareties
-    
-    lazy var settingsRepository = SettingsRepository()
+    private lazy var vm: SettingsViewModel = {
+        let repository = SettingsRepository()
+        let vm = SettingsViewModel(repository: repository)
+        return vm
+    }()
     
     private lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
@@ -32,25 +35,34 @@ class SettingsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lazy var settingsRowData = settingsRepository.decodedData()
-        
-        lazy var language = IconLabelLabelRow(frame: .zero, model: settingsRowData[0])
-        lazy var notifications = IconLabelSwitchRow(frame: .zero, model: settingsRowData[2])
-        lazy var currentVersion = IconLabelLabelRow(frame: .zero, model: settingsRowData[1])
-        lazy var faq = IconLabelChevronRow(frame: .zero, model: settingsRowData[3])
-        lazy var aboutUs = IconLabelChevronRow(frame: .zero, model: settingsRowData[4])
-        lazy var privacyPolicy = IconLabelChevronRow(frame: .zero, model: settingsRowData[5])
-        lazy var termsAndConditions = IconLabelChevronRow(frame: .zero, model: settingsRowData[6])
-        lazy var deleteAccount = IconLabelChevronRow(frame: .zero, model: settingsRowData[7])
-        lazy var logout = UIView()
-        lazy var deleteButton = DeleteButton(title: "Log out", iconName: "door.right.hand.open")
-        
         view.addSubview(scrollView)
         scrollView.alignAllEdgesWithSuperview(side: .allSides, .init(top: 100, left: 0, bottom: 0, right: 0))
         
         scrollView.addSubview(stack)
         stack.setSize(width: 430)
         stack.alignAllEdgesWithSuperview(side: .allSides, .init(top: 10, left: 0, bottom: 0, right: 0))
+        
+        vm.dataset.forEach { model in
+            
+            let view: BaseSettingsRow
+            
+            switch model.typeAndValue {
+            case .keyValue(let value):
+                view = IconLabelLabelRow(model: model, value: value)
+            case .switch(let value):
+                view = IconLabelSwitchRow(model: model, value: value)
+            case .onlyKey:
+                view = IconLabelChevronRow(model: model)
+            case .unknown:
+                view = BaseSettingsRow(model: model)
+            }
+            
+            stack.addArrangedSubview(view)
+            view.setSize(height: BaseSettingsRow.preferredHeight)
+        }
+        
+        lazy var logout = UIView()
+        lazy var deleteButton = DeleteButton(title: "Log out", iconName: "door.right.hand.open")
         
         logout.setSize(height: 112)
         logout.addSubview(deleteButton)
@@ -59,14 +71,6 @@ class SettingsViewController: BaseViewController {
         deleteButton.setCenterAnchorToCenterOfSuperview(axis: .vertical)
         deleteButton.setCenterAnchorToCenterOfSuperview(axis: .horizontal)
         
-        stack.addArrangedSubview(language)
-        stack.addArrangedSubview(notifications)
-        stack.addArrangedSubview(currentVersion)
-        stack.addArrangedSubview(faq)
-        stack.addArrangedSubview(aboutUs)
-        stack.addArrangedSubview(privacyPolicy)
-        stack.addArrangedSubview(termsAndConditions)
-        stack.addArrangedSubview(deleteAccount)
         stack.addArrangedSubview(logout)
     }
     

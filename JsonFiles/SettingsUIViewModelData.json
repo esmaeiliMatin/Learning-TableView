@@ -3,13 +3,13 @@
         "type": "IconLabelLabelRow",
         "iconName": "globe",
         "title": "Language",
-        "title2": "English"
+        "value": "English"
     },
     {
         "type": "IconLabelLabelRow",
         "iconName": "magnifyingglass",
         "title": "Current Version",
-        "title2": "1.1.2"
+        "value": "1.1.2"
     },
     {
         "type": "IconLabelRowModel",
@@ -23,7 +23,7 @@
         "title": "FAQ"
     },
     {
-        "type": "questionmark.circle",
+        "type": "IconLabelChevronRow",
         "iconName": "magnifyingglass",
         "title": "About us"
     },

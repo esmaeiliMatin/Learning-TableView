@@ -10,7 +10,7 @@ import UIKit
 class OrderCell: UITableViewCell {
     
     // MARK: - Property
-    
+
     lazy var view: UIView = {
         let view = UIView()
         return view

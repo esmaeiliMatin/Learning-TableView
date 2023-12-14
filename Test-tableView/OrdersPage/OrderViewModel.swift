@@ -9,7 +9,7 @@ import Foundation
 
 class OrderViewModel {
     
-    // MARK: - Praperties
+    // MARK: - Properties
     lazy var orderRepository = OrderRepository()
     lazy var orders: [Order] = []
     

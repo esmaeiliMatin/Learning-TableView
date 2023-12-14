@@ -25,3 +25,7 @@ Hint => {
 - Views are not allowed to fetch data, or save data(if necessary) -- (No repository in view allowed)
 - View models control the state of the view (Loading, loaded, error, etc.)
 }
+
+
+Dependency Injection
+Unit Testing

@@ -15,6 +15,7 @@
 		94323EF42B29C941007B1D71 /* OrderListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94323EF32B29C941007B1D71 /* OrderListController.swift */; };
 		94323EF62B29DF2D007B1D71 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94323EF52B29DF2D007B1D71 /* SettingsViewController.swift */; };
 		94323EF82B29DF71007B1D71 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94323EF72B29DF71007B1D71 /* SettingsViewModel.swift */; };
+		94323EFC2B29F505007B1D71 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94323EFB2B29F505007B1D71 /* BaseRepository.swift */; };
 		943F0D502B149DA700A5629D /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943F0D4F2B149DA700A5629D /* DeleteButton.swift */; };
 		943F0D532B16076D00A5629D /* IconNamesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943F0D522B16076D00A5629D /* IconNamesEnum.swift */; };
 		9440A5272B13728200760D14 /* IconLabelChevronRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9440A5262B13728200760D14 /* IconLabelChevronRow.swift */; };
@@ -34,7 +35,7 @@
 		94CD2B782B0B6CBA002433B4 /* OrderListImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CD2B772B0B6CBA002433B4 /* OrderListImage.swift */; };
 		94DD6ACB2B270A3600A386D4 /* SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DD6ACA2B270A3600A386D4 /* SettingsRepository.swift */; };
 		94DD6AD12B2724B000A386D4 /* SettingsUIViewModelData.json in Resources */ = {isa = PBXBuildFile; fileRef = 94DD6AD02B2724B000A386D4 /* SettingsUIViewModelData.json */; };
-		94DD6AD32B27276800A386D4 /* SettingsRowDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DD6AD22B27276800A386D4 /* SettingsRowDataModel.swift */; };
+		94DD6AD32B27276800A386D4 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DD6AD22B27276800A386D4 /* SettingModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		94323EF32B29C941007B1D71 /* OrderListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListController.swift; sourceTree = "<group>"; };
 		94323EF52B29DF2D007B1D71 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		94323EF72B29DF71007B1D71 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		94323EFB2B29F505007B1D71 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		943F0D4F2B149DA700A5629D /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
 		943F0D512B14C12A00A5629D /* TODOS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODOS.md; sourceTree = "<group>"; };
 		943F0D522B16076D00A5629D /* IconNamesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconNamesEnum.swift; sourceTree = "<group>"; };
@@ -68,7 +70,7 @@
 		94CD2B772B0B6CBA002433B4 /* OrderListImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListImage.swift; sourceTree = "<group>"; };
 		94DD6ACA2B270A3600A386D4 /* SettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepository.swift; sourceTree = "<group>"; };
 		94DD6AD02B2724B000A386D4 /* SettingsUIViewModelData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SettingsUIViewModelData.json; sourceTree = "<group>"; };
-		94DD6AD22B27276800A386D4 /* SettingsRowDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowDataModel.swift; sourceTree = "<group>"; };
+		94DD6AD22B27276800A386D4 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		942F51E62B021407004CDC58 /* Test-tableView */ = {
 			isa = PBXGroup;
 			children = (
+				94323EF92B29F4F6007B1D71 /* Base */,
 				942F51F52B021408004CDC58 /* Info.plist */,
 				942F51E72B021407004CDC58 /* AppDelegate.swift */,
 				949700062B18700B009F64A9 /* Layout&Positions */,
@@ -123,14 +126,30 @@
 			path = supporting;
 			sourceTree = "<group>";
 		};
+		94323EF92B29F4F6007B1D71 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				94323EFA2B29F4FC007B1D71 /* Repository */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		94323EFA2B29F4FC007B1D71 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				94323EFB2B29F505007B1D71 /* BaseRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		9440A5232B1371A400760D14 /* SettingsPage */ = {
 			isa = PBXGroup;
 			children = (
 				94DD6ACA2B270A3600A386D4 /* SettingsRepository.swift */,
 				94323EF52B29DF2D007B1D71 /* SettingsViewController.swift */,
-				94DD6AD22B27276800A386D4 /* SettingsRowDataModel.swift */,
-				9440A52D2B1375A600760D14 /* UIComponents */,
+				94DD6AD22B27276800A386D4 /* SettingModel.swift */,
 				94323EF72B29DF71007B1D71 /* SettingsViewModel.swift */,
+				9440A52D2B1375A600760D14 /* UIComponents */,
 			);
 			path = SettingsPage;
 			sourceTree = "<group>";
@@ -301,7 +320,7 @@
 				945344602B03980200C1C9F4 /* OrderCell.swift in Sources */,
 				942F52002B025359004CDC58 /* MainTabBar.swift in Sources */,
 				94A3BD4F2B25F4C800EC589B /* OrderRepository.swift in Sources */,
-				94DD6AD32B27276800A386D4 /* SettingsRowDataModel.swift in Sources */,
+				94DD6AD32B27276800A386D4 /* SettingModel.swift in Sources */,
 				942F51E82B021407004CDC58 /* AppDelegate.swift in Sources */,
 				94CD2B782B0B6CBA002433B4 /* OrderListImage.swift in Sources */,
 				94BA6C1D2B06312A005B53BB /* PurchasesInfoLabels.swift in Sources */,
@@ -310,6 +329,7 @@
 				9440A52B2B13735600760D14 /* UIView+Layout.swift in Sources */,
 				94323EF22B29C245007B1D71 /* OrderViewModel.swift in Sources */,
 				943F0D502B149DA700A5629D /* DeleteButton.swift in Sources */,
+				94323EFC2B29F505007B1D71 /* BaseRepository.swift in Sources */,
 				94323EF82B29DF71007B1D71 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

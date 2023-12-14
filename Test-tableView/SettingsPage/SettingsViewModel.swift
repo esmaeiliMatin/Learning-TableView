@@ -8,11 +8,14 @@
 import Foundation
 
 class SettingsViewModel {
-    // MARK: - Praperties
-    lazy var settingsRepository = SettingsRepository()
-    lazy var settingsRowData: [SettingsRowDataModel] = []
     
-    init() {
-        settingsRowData = settingsRepository.decodedData()
+    // MARK: - Properties
+    private let repository: SettingsRepository
+    public private(set) var dataset: [SettingModel] = []
+    
+    init(repository: SettingsRepository) {
+        self.repository = repository
+        
+        dataset = repository.fetchData()
     }
 }

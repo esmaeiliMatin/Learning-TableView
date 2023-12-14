@@ -9,44 +9,21 @@ import UIKit
 
 class IconLabelSwitchRow: BaseSettingsRow {
     
-    // MARK: - Properties
-    
     lazy var switchButton: UISwitch = {
         let view = UISwitch()
         view.onTintColor = #colorLiteral(red: 0.6745263934, green: 0.7824765444, blue: 0.3298357725, alpha: 1)
+        view.isOn = value
         return view
     }()
     
-    // MARK: - Initialization
+    let value: Bool
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
-    }
-    
-    override init(frame: CGRect, model: SettingsRowDataModel) {
-        super.init(frame: frame, model: model)
-        addSwitchButton(isOn: model.switchButton)
-    }
-    
-    private func commonInit() {
-        backgroundColor = .white
-        addSubview(switchButton)
+    init(model: SettingModel, value: Bool) {
+        self.value = value
         
-        switchButton.alignAllEdgesWithSuperview(side: .allSides, .init(top: 26, left: 350, bottom: 0, right: 0))
-    }
-    
-    // MARK: - Configuration
-    
-    func addSwitchButton(isOn: Bool?) {
+        super.init(model: model)
         
         addSubview(switchButton)
-        if let active = isOn { switchButton.isOn = active }
         switchButton.setCenterAnchorToCenterOfSuperview(axis: .vertical)
         switchButton.alignAllEdgesWithSuperview(side: .trailing, .init(top: 0, left: 0, bottom: 0, right: -30))
     }

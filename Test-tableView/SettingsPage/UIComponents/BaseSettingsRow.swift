@@ -27,28 +27,16 @@ class BaseSettingsRow: UIView {
     
     lazy var icon = UIImageView()
     
-    private let viewHeight = 72.0
+    public static let preferredHeight: CGFloat = 72.0
     
-    // MARK: - Initialization
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
-    }
+    let model: SettingModel
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    init(frame: CGRect, model: SettingsRowDataModel) {
-        super.init(frame: frame)
-        commonInit()
-        configure(model: model)
-    }
-    
-    // MARK: - Configuration
-    private func commonInit() {
+    init(model: SettingModel) {
+        self.model = model
+        
+        super.init(frame: .zero)
+        
         backgroundColor = .white
-        setSize(height: viewHeight)
         
         addSubview(label)
         label.setSize(width: 200)
@@ -59,9 +47,16 @@ class BaseSettingsRow: UIView {
         icon.setSize(width: 24, height: 24)
         icon.alignAllEdgesWithSuperview(side: .leading, .init(top: 0, left: 30, bottom: 0, right: 0))
         icon.setCenterAnchorToCenterOfSuperview(axis: .vertical)
+        
+        configure(model: model)
     }
     
-    func configure(model: SettingsRowDataModel) {
+    @available(*, unavailable)
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("")
+    }
+    
+    func configure(model: SettingModel) {
         label.text = model.title
         icon.image = UIImage(systemName: model.iconName)
         icon.tintColor = .systemGray
